@@ -172,8 +172,8 @@ export default async function ProgrammeDetailPage({
                   </>
                 ) : (
                   <Button asChild size="lg" className="w-full">
-                    <Link href={`/contact?enquiry=${encodeURIComponent("Football Programmes")}`}>
-                      Enquire Now
+                    <Link href={`/register/${programme.slug}`}>
+                      Register Now
                     </Link>
                   </Button>
                 )}

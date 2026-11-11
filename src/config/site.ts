@@ -58,3 +58,21 @@ export const bookingBackendConfigured =
 export const contactBackendConfigured =
   process.env.CONTACT_FORM_PROVIDER !== undefined &&
   process.env.CONTACT_FORM_PROVIDER.length > 0;
+
+/**
+ * Whether the programme registration backend (AWS API) is configured.
+ * Controlled via env var; when false the registration flow runs in a
+ * clearly labelled demo mode and never claims a real registration was made.
+ */
+export const registrationBackendConfigured =
+  process.env.NEXT_PUBLIC_REGISTRATION_API_URL !== undefined &&
+  process.env.NEXT_PUBLIC_REGISTRATION_API_URL.length > 0;
+
+/** Standing order bank details for programme registration payments. */
+export const standingOrderDetails = {
+  accountName: "Let's Play Limited",
+  bankName: "Revolut Business",
+  sortCode: "04-29-09",
+  accountNumber: "4769 3789",
+  referenceNote: "your child's full name",
+};

@@ -36,13 +36,14 @@ src/
     programmes/         Programme card + detail content
     camps/              Camp card
     booking/            Multi-step booking form + stepper
+    registration/       Multi-step programme registration form + stepper
     forms/              Contact form
-    ui/                 Shared primitives (button, badge, accordion, etc.)
+    ui/                 Shared primitives (button, badge, accordion, stepper, etc.)
     seo/                JSON-LD structured data
   lib/
     data/               Seed content: programmes, camps, coaches, FAQs
-    validation/         Zod schemas (contact, booking)
-    api/                Server-side submission logic (booking, contact)
+    validation/         Zod schemas (contact, booking, registration)
+    api/                Server-side submission logic (booking, contact, registration)
     utils.ts            Formatting helpers
   types/                Shared TypeScript types
   config/               Site-wide config (nav, sponsor, feature flags)
@@ -61,6 +62,8 @@ connected. The site works locally with none of these set:
 | --- | --- |
 | `BOOKING_API_URL` / `BOOKING_API_KEY` | Secure AWS-hosted booking API (API Gateway + Lambda, DynamoDB/PostgreSQL). Unset = demo mode. |
 | `NEXT_PUBLIC_BOOKING_API_URL` | Mirrors booking backend status to the client UI. |
+| `REGISTRATION_API_URL` / `REGISTRATION_API_KEY` | Secure AWS-hosted programme registration API. Unset = demo mode. |
+| `NEXT_PUBLIC_REGISTRATION_API_URL` | Mirrors registration backend status to the client UI. |
 | `CONTACT_FORM_PROVIDER` + credentials | Email delivery provider for the contact form. Unset = form clearly tells users to email/call directly instead of faking success. |
 | `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | Reserved for future AWS-backed services (file storage, etc). |
 
@@ -76,6 +79,15 @@ connected. The site works locally with none of these set:
     but with no `BOOKING_API_URL` configured it returns a clearly labelled
     demo reference and never claims a real reservation was made. No payment
     provider is integrated.
+  - **Programme registration** (`/register/[programmeId]`): fully built
+    multi-step UI and server route (parent/child details, medical info,
+    liability/photo/WhatsApp consent, standing order payment agreement),
+    but with no `REGISTRATION_API_URL` configured it returns a clearly
+    labelled demo reference and never claims a real registration was made.
+    Standing order bank details are shown for the parent to set up
+    themselves; no card payment provider is integrated. The "Register Now"
+    CTA only appears on a programme page once that programme's `status` is
+    set to something other than `fully-booked` in `src/lib/data/programmes.ts`.
   - **Contact form**: validates and rate-limits submissions server-side, but
     without `CONTACT_FORM_PROVIDER` configured it tells the user the form is
     unavailable and shows direct email/phone alternatives rather than a false

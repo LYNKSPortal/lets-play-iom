@@ -92,3 +92,28 @@ export interface BookingPayload {
     photoConsent: boolean;
   };
 }
+
+export interface RegistrationPayload {
+  programmeSlug: string;
+  parent: {
+    fullName: string;
+    email: string;
+    phone: string;
+  };
+  child: {
+    fullName: string;
+    dateOfBirth: string;
+    gender: string;
+    schoolYear: string;
+    medicalInfo?: string;
+    additionalInfo?: string;
+    emergencyContactName: string;
+    emergencyContactPhone: string;
+  };
+  consent: {
+    /** Covers the liability/risk waiver, photography consent and WhatsApp communication notice. */
+    termsAccepted: boolean;
+    /** Acknowledges the standing order payment terms and bank details. */
+    paymentAgreementAccepted: boolean;
+  };
+}
