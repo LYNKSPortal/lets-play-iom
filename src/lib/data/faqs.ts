@@ -37,7 +37,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
     {
       question: "Is Full Throttle invite only?",
       answer:
-        "No — Full Throttle is open access. Our invite-only pathway (Gold Programmes) is separate and not covered on this site yet.",
+        "No — Full Throttle is open access. Our invite-only pathway, Gold Programmes, is a separate step for more advanced players.",
     },
     {
       question: "When and where do sessions run?",
@@ -53,6 +53,28 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
       question: "The programme shows fully booked — what now?",
       answer:
         "Send an enquiry and we'll add you to the waiting list and contact you when a space becomes available.",
+    },
+  ],
+  gold: [
+    {
+      question: "How do players join the Gold Programmes?",
+      answer:
+        "Gold Programmes are invite only. Players are invited by our coaching team when they're at a more advanced stage of their footballing journey — there isn't an open sign-up for this pathway.",
+    },
+    {
+      question: "What age groups does Gold cover?",
+      answer:
+        "We offer Gold Programmes for children from Year 1 to Year 6, as well as a girls-only programme for children in Year 5 through Year 9.",
+    },
+    {
+      question: "Who coaches the Gold Programmes?",
+      answer:
+        "Gold sessions are led by our experienced coaches, including UEFA B and C Licence-qualified coaches.",
+    },
+    {
+      question: "I think my child is ready for Gold — can I ask?",
+      answer:
+        "Yes, get in touch and we'll be happy to talk through the pathway and how invitations work.",
     },
   ],
 };

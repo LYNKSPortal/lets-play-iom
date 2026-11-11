@@ -13,7 +13,7 @@ export const programmes: Programme[] = [
     description:
       "Fun, structured after-school football sessions helping young players develop their skills and confidence.",
     longDescription: [
-      "Our Football Programmes are open-access after-school sessions designed to give every young player the chance to enjoy the game, whatever their starting point.",
+      "Our Football Programmes are open-access after-school sessions for boys and girls, designed to give every young player the chance to enjoy the game, whatever their starting point. Children of all abilities play together, with coaches implementing the Let's Play curriculum throughout every session.",
       "Sessions focus on ball mastery, game understanding and teamwork in a positive, supportive environment — building confident players who love coming back week after week.",
     ],
     benefits: [
@@ -40,7 +40,7 @@ export const programmes: Programme[] = [
     description:
       "Dedicated football development sessions designed to challenge and support young players.",
     longDescription: [
-      "Full Throttle is for young players who want more from their football — a dedicated development programme designed to stretch, challenge and support players who are ready to go further.",
+      "Full Throttle is for young players who want more from their football — a dedicated development programme for boys and girls, designed to stretch, challenge and support players who are ready to go further. As with all our open-access programmes, coaches implement the Let's Play curriculum throughout every session.",
       "With a sharper focus on technical detail and game intensity, Full Throttle helps committed players take the next step in their development.",
     ],
     benefits: [
@@ -53,6 +53,33 @@ export const programmes: Programme[] = [
       "Open to children in school years 3 to 9 who are ready for a more challenging training environment.",
     yearGroups: "Years 3–9",
     accessType: "open",
+    status: "fully-booked",
+    sessionInfo: "After-school sessions during term time",
+    location: "Isle of Man",
+    price: null,
+    published: true,
+  },
+  {
+    slug: "gold",
+    name: "Gold Programmes",
+    category: "Invite-Only Programme",
+    tagline: "The next step in the pathway.",
+    description:
+      "Invite-only programmes for players at a more advanced stage of their footballing journey, training alongside other invited players.",
+    longDescription: [
+      "Our Gold Programmes are invite-only, for players who are at a more advanced stage of their footballing journey and ready to train alongside other invited players.",
+      "As with every Let's Play programme, Gold sessions are led by experienced coaches — including UEFA B and C Licence-qualified coaches — who bring their football backgrounds and experience to every session.",
+    ],
+    benefits: [
+      "A higher standard of training alongside other invited players",
+      "Coaching from our most experienced, licence-qualified coaches",
+      "A clear pathway for players progressing through Let's Play",
+      "A girls-only pathway available within the Gold Programme",
+    ],
+    whoItsFor:
+      "Invite only. We offer Gold Programmes for children from Year 1 to Year 6, as well as a girls-only programme for children in Year 5 through Year 9.",
+    yearGroups: "Years 1–6, plus girls-only Years 5–9",
+    accessType: "invite-only",
     status: "fully-booked",
     sessionInfo: "After-school sessions during term time",
     location: "Isle of Man",

@@ -56,6 +56,9 @@ export default async function ProgrammeDetailPage({
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <StatusBadge status={programme.status} />
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-border-subtle bg-card px-2.5 py-1 text-[11px] font-semibold uppercase tracking-widest text-muted">
+            {programme.accessType === "invite-only" ? "Invite Only" : "Open Access"}
+          </span>
           {programme.yearGroups && (
             <span className="inline-flex items-center gap-1.5 text-sm text-muted">
               <UsersIcon aria-hidden className="size-4 text-gold" />
@@ -152,7 +155,19 @@ export default async function ProgrammeDetailPage({
               </dl>
 
               <div className="mt-6 space-y-3">
-                {programme.status === "fully-booked" ? (
+                {programme.accessType === "invite-only" ? (
+                  <>
+                    <p className="text-xs leading-relaxed text-muted">
+                      This programme is by invite only. Get in touch to find
+                      out more about the Gold pathway for your child.
+                    </p>
+                    <Button asChild size="lg" className="w-full">
+                      <Link href={`/contact?enquiry=${encodeURIComponent("Football Programmes")}`}>
+                        Ask About Gold Programmes
+                      </Link>
+                    </Button>
+                  </>
+                ) : programme.status === "fully-booked" ? (
                   <>
                     <p className="text-xs leading-relaxed text-muted">
                       This programme is currently fully booked. Enquire to
