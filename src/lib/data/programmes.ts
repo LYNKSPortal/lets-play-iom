@@ -86,6 +86,7 @@ export const programmes: Programme[] = [
     sessionInfo: "After-school sessions during term time",
     location: "Isle of Man",
     price: null,
+    image: "/Gold-Programmes.jpg",
     published: true,
   },
 ];
