@@ -30,6 +30,7 @@ export const programmes: Programme[] = [
     sessionInfo: "After-school sessions during term time",
     location: "Isle of Man",
     price: "£39.50 per month (standing order, term-time only)",
+    image: "/Football-Programmes.jpg",
     published: true,
   },
   {
@@ -57,6 +58,7 @@ export const programmes: Programme[] = [
     sessionInfo: "After-school sessions during term time",
     location: "Isle of Man",
     price: null,
+    image: "/Full-Throttle-Programmes.jpg",
     published: true,
   },
   {

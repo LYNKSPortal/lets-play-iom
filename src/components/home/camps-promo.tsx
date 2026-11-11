@@ -15,13 +15,13 @@ export function CampsPromo() {
     <section className="px-5 py-20 sm:px-8 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal className="order-2 lg:order-1">
-          <div className="bg-pitch relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-xl border border-border-subtle">
+          <div className="relative aspect-4/3 overflow-hidden rounded-xl border border-border-subtle">
             <Image
-              src="/images/easter-camp.png"
-              alt="Let's Play football camp ball mark"
-              width={560}
-              height={426}
-              className="h-auto w-3/4 max-w-sm opacity-80"
+              src="/Football-Friends-Fun.jpg"
+              alt="Let's Play team celebrating together at a football camp on the Isle of Man"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         </Reveal>
