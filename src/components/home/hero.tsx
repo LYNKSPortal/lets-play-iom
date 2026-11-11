@@ -6,13 +6,12 @@ import { HeroVideo } from "@/components/home/hero-video";
 
 export function Hero() {
   return (
-    <section className="bg-pitch relative flex min-h-[100svh] items-center overflow-hidden bg-black">
+    <section className="bg-pitch relative flex min-h-[125svh] items-center overflow-hidden bg-black sm:min-h-[100svh]">
       {/* Cinematic hero video of young footballers training */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <HeroVideo />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute inset-0 bg-black/30 sm:bg-black/45" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent sm:h-40" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-36 sm:px-8">

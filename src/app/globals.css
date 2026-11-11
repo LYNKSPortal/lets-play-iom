@@ -60,7 +60,9 @@ body {
  * On narrow (portrait) viewports, the source footage is landscape, so we
  * rotate it 90deg and swap its box dimensions — this fills a portrait
  * screen edge-to-edge using the video's long axis instead of cropping
- * heavily from a straight landscape cover.
+ * heavily from a straight landscape cover. The pre-rotation width (125svh)
+ * matches the hero section's taller mobile height (min-h-[125svh]) so the
+ * rotated video covers the full section, not just one viewport height.
  */
 .hero-video-frame {
   display: block;
@@ -74,7 +76,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100svh;
+    width: 125svh;
     height: 100svw;
     max-width: none;
     transform: translate(-50%, -50%) rotate(90deg);
