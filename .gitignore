@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# temporary secret upload files (delete after use)
+vercel-uuuup.txt
+
 # vercel
 .vercel
 
