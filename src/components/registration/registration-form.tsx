@@ -24,7 +24,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { FieldError } from "@/components/ui/field";
 import { RegistrationStepper } from "@/components/registration/registration-stepper";
 
-type Step = 1 | 2 | 3 | 4 | 5;
+type Step = 1 | 2 | 3 | 4 | 5 | 6;
 
 export function RegistrationForm({ programme }: { programme: Programme }) {
   const [step, setStep] = useState<Step>(1);
@@ -80,7 +80,11 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
       ]);
       if (!valid) return;
     }
-    setStep((s) => Math.min(5, s + 1) as Step);
+    if (step === 4) {
+      const valid = await trigger(["consent.termsAccepted"]);
+      if (!valid) return;
+    }
+    setStep((s) => Math.min(6, s + 1) as Step);
   }
 
   function goBack() {
@@ -104,7 +108,7 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
         return;
       }
       setResult({ reference: data.reference, demo: data.demo });
-      setStep(5);
+      setStep(6);
     } catch {
       setSubmitError(
         "We couldn't reach the registration service. Please check your connection and try again."
@@ -120,7 +124,7 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
     <div>
       <RegistrationStepper current={step} />
 
-      {!registrationBackendConfigured && step < 5 && (
+      {!registrationBackendConfigured && step < 6 && (
         <div className="mb-8 flex items-start gap-3 rounded-lg border border-amber-400/30 bg-amber-400/10 p-4 text-sm text-amber-200">
           <ShieldAlert aria-hidden className="mt-0.5 size-5 shrink-0" />
           <p>
@@ -383,10 +387,320 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
         {step === 4 && (
           <section className="space-y-6 rounded-xl border border-border-subtle bg-card p-6">
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-white">
-              Review &amp; Agreements
+              Liability and Negligence
             </h2>
 
-            <div className="space-y-4 text-sm">
+            <div className="max-h-96 space-y-4 overflow-y-auto rounded-lg border border-border-subtle bg-surface p-4 text-sm leading-relaxed text-muted">
+              <div>
+                <p className="font-semibold text-white">Acknowledgment of Risk</p>
+                <p className="mt-1">
+                  I acknowledge that participation in football activities
+                  involves inherent risks, including but not limited to
+                  physical injury, illness, or even death. I understand that
+                  these risks may result from the actions, inactions, or
+                  negligence of my child, other participants, the football
+                  club, its staff, volunteers, or others involved in the
+                  activities.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Assumption of Risk</p>
+                <p className="mt-1">
+                  I voluntarily agree to allow my child to participate in all
+                  football activities organized by Let&apos;s Play. I accept
+                  and assume all risks, known and unknown, related to such
+                  participation, including those arising from the negligence
+                  of the club, its staff, and other participants.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Release of Liability</p>
+                <p className="mt-1">
+                  In consideration of my child&apos;s participation in
+                  football activities, I, on behalf of myself, my child, and
+                  our heirs, assigns, personal representatives, and next of
+                  kin, hereby release, waive, and discharge Let&apos;s Play,
+                  its directors, officers, employees, volunteers, and agents
+                  (collectively, &quot;the Released Parties&quot;) from any
+                  and all liability, claims, demands, actions, or causes of
+                  action, arising out of or related to any injury, illness,
+                  damage, or loss that may occur as a result of my
+                  child&apos;s participation in football activities, whether
+                  caused by the negligence of the Released Parties or
+                  otherwise, to the fullest extent permitted by law.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Indemnification</p>
+                <p className="mt-1">
+                  I agree to indemnify and hold harmless the Released Parties
+                  from and against any and all claims, liabilities, damages,
+                  costs, and expenses (including legal fees) arising out of
+                  or related to my child&apos;s participation in football
+                  activities, including claims arising from the negligence
+                  of the Released Parties.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Medical Treatment</p>
+                <p className="mt-1">
+                  In the event of an injury or illness, I authorize the
+                  football club and its representatives to seek and obtain
+                  medical treatment for my child. I understand that I am
+                  responsible for any costs associated with such medical
+                  treatment.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Governing Law</p>
+                <p className="mt-1">
+                  This waiver and release shall be governed by and
+                  interpreted in accordance with the laws of the Isle of Man.
+                </p>
+              </div>
+              <p className="text-xs text-muted">
+                By agreeing this, I the subscriber, being the parent or legal
+                guardian of the child named on this form, agree to the above.
+              </p>
+              <div>
+                <p className="font-semibold text-white">
+                  Consent for Photography and Videography
+                </p>
+                <p className="mt-1">
+                  As a parent or legal guardian, I hereby grant permission to
+                  Let&apos;s Play to photograph and/or record my child during
+                  football-related activities and events. I understand that
+                  these images or videos may be used for promotional
+                  purposes, including but not limited to social media,
+                  websites, newsletters, and other marketing materials. I
+                  acknowledge that these images will be used in a respectful
+                  and appropriate manner, and I waive any rights to
+                  compensation or ownership of the images. If at any time I
+                  wish to revoke this consent, I will notify Let&apos;s Play
+                  in writing.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">
+                  WhatsApp as our Primary Communication
+                </p>
+                <p className="mt-1">
+                  At Let&apos;s Play, we use WhatsApp as our primary
+                  communication platform for sharing information about
+                  football events, programs, and updates. This allows us to
+                  quickly and efficiently keep everyone informed and
+                  connected. We encourage all parents and guardians to join
+                  our WhatsApp group to stay up to date with the latest news
+                  and schedules. Your participation helps ensure that you
+                  don&apos;t miss any important announcements.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-start gap-3">
+                <Controller
+                  control={control}
+                  name="consent.termsAccepted"
+                  render={({ field }) => (
+                    <Checkbox
+                      id="consent.termsAccepted"
+                      checked={field.value === true}
+                      onCheckedChange={(checked) =>
+                        field.onChange(checked === true)
+                      }
+                    />
+                  )}
+                />
+                <Label htmlFor="consent.termsAccepted" className="font-normal leading-relaxed">
+                  I &quot;Agree&quot; to the above. *
+                </Label>
+              </div>
+              <FieldError
+                id="consent-terms-error"
+                message={errors.consent?.termsAccepted?.message}
+              />
+            </div>
+
+            <div className="flex items-center justify-between pt-2">
+              <Button type="button" variant="secondary" onClick={goBack}>
+                Back
+              </Button>
+              <Button type="button" onClick={goNext}>
+                Continue
+              </Button>
+            </div>
+          </section>
+        )}
+
+        {step === 5 && (
+          <section className="space-y-6 rounded-xl border border-border-subtle bg-card p-6">
+            <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-white">
+              Standing Order Payment Details/Agreement
+            </h2>
+
+            <div className="max-h-96 space-y-4 overflow-y-auto rounded-lg border border-border-subtle bg-surface p-4 text-sm leading-relaxed text-muted">
+              <div>
+                <p className="font-semibold text-white">1. Agreement Overview</p>
+                <p className="mt-1">
+                  This agreement outlines the terms and conditions under
+                  which the Parent/Guardian agrees to make regular standing
+                  order payments to Let&apos;s Play for the participation of
+                  their child in the club&apos;s activities.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">2. Payment Details</p>
+                <ul className="mt-1 list-disc space-y-1 pl-5">
+                  <li>
+                    Amount: {programme.price ?? "see our Terms & Conditions"}
+                  </li>
+                  <li>Frequency: Monthly.</li>
+                  <li>Payment date: 1st of each month.</li>
+                  <li>
+                    Payment duration: payments will commence on the 1st of
+                    each month and continue until further notice.
+                  </li>
+                  <li>
+                    Term time only: payments cover programmes operating
+                    during school term time only. No programmes take place
+                    in August, and standing orders can be paused for August
+                    directly with your bank if you wish.
+                  </li>
+                  <li>
+                    Mid-month joining: if the child joins the club in the
+                    middle of a month, a one-off payment will be required to
+                    cover the remainder of that month. The regular monthly
+                    fee will then be due on the 1st of the following month
+                    (this can be discussed and agreed with the Owner).
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-white">
+                  3. Bank Details for Standing Order
+                </p>
+                <ul className="mt-1 list-disc space-y-1 pl-5">
+                  <li>Account name: {standingOrderDetails.accountName}</li>
+                  <li>Bank name: {standingOrderDetails.bankName}</li>
+                  <li>Sort code: {standingOrderDetails.sortCode}</li>
+                  <li>Account number: {standingOrderDetails.accountNumber}</li>
+                  <li>
+                    Reference: please use {standingOrderDetails.referenceNote}{" "}
+                    when setting up the standing order.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-white">
+                  4. Obligations of the Parent/Guardian
+                </p>
+                <ul className="mt-1 list-disc space-y-1 pl-5">
+                  <li>
+                    The Parent/Guardian agrees to set up a standing order
+                    with their bank to ensure timely monthly payments once
+                    signed up.
+                  </li>
+                  <li>
+                    If joining mid-month, the Parent/Guardian agrees to make
+                    a one-off payment to cover the remainder of the month.
+                  </li>
+                  <li>
+                    The Parent/Guardian agrees to ensure that sufficient
+                    funds are available in the account on the payment dates.
+                  </li>
+                  <li>
+                    The Parent/Guardian understands that failure to make
+                    payments on time may result in a £5.00 late payment fee.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-white">
+                  5. Obligations of the Football Club
+                </p>
+                <ul className="mt-1 list-disc space-y-1 pl-5">
+                  <li>
+                    The Club will provide the agreed services to the child,
+                    including training sessions, matches, and other
+                    activities as per the club&apos;s schedule.
+                  </li>
+                  <li>
+                    The Club agrees to provide at least 30 days&apos; notice
+                    in writing if any changes are to be made to the payment
+                    amount, frequency, or bank details.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-white">
+                  6. Cancellation and Termination
+                </p>
+                <ul className="mt-1 list-disc space-y-1 pl-5">
+                  <li>
+                    The Parent/Guardian may cancel the standing order at any
+                    time by providing 30 days&apos; written notice to
+                    Let&apos;s Play Limited. Cancellation of the standing
+                    order will result in the termination of the child&apos;s
+                    membership.
+                  </li>
+                  <li>
+                    Let&apos;s Play Limited reserves the right to terminate
+                    this agreement and the child&apos;s membership if
+                    payments are not made in accordance with the terms
+                    outlined above.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-white">7. Governing Law</p>
+                <p className="mt-1">
+                  This agreement is governed by and construed in accordance
+                  with the laws of the Isle of Man.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">8. Agreement</p>
+                <p className="mt-1">
+                  By agreement to this document, both parties acknowledge
+                  that they have read, understood, and agree to the terms
+                  and conditions outlined above.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-start gap-3">
+                <Controller
+                  control={control}
+                  name="consent.paymentAgreementAccepted"
+                  render={({ field }) => (
+                    <Checkbox
+                      id="consent.paymentAgreementAccepted"
+                      checked={field.value === true}
+                      onCheckedChange={(checked) =>
+                        field.onChange(checked === true)
+                      }
+                    />
+                  )}
+                />
+                <Label
+                  htmlFor="consent.paymentAgreementAccepted"
+                  className="font-normal leading-relaxed"
+                >
+                  I &quot;Agree&quot; to the above. *
+                </Label>
+              </div>
+              <FieldError
+                id="consent-payment-error"
+                message={errors.consent?.paymentAgreementAccepted?.message}
+              />
+            </div>
+
+            <div className="space-y-4 border-t border-border-subtle pt-5 text-sm">
+              <h3 className="font-display text-xl font-bold uppercase tracking-wide text-white">
+                Review Your Details
+              </h3>
               <div className="rounded-lg border border-border-subtle bg-surface p-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-gold">
                   Programme
@@ -423,103 +737,6 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
               </div>
             </div>
 
-            <div className="space-y-3 border-t border-border-subtle pt-5">
-              <div className="flex items-start gap-3">
-                <Controller
-                  control={control}
-                  name="consent.termsAccepted"
-                  render={({ field }) => (
-                    <Checkbox
-                      id="consent.termsAccepted"
-                      checked={field.value === true}
-                      onCheckedChange={(checked) =>
-                        field.onChange(checked === true)
-                      }
-                    />
-                  )}
-                />
-                <Label htmlFor="consent.termsAccepted" className="font-normal leading-relaxed">
-                  I have read and agree to the{" "}
-                  <Link href="/terms" className="text-gold underline-offset-4 hover:underline">
-                    Terms &amp; Conditions
-                  </Link>
-                  , including the liability and risk waiver, photography
-                  consent, and WhatsApp communication notice. *
-                </Label>
-              </div>
-              <FieldError
-                id="consent-terms-error"
-                message={errors.consent?.termsAccepted?.message}
-              />
-            </div>
-
-            <div className="rounded-lg border border-gold/30 bg-surface p-4 text-sm">
-              <p className="text-xs font-bold uppercase tracking-widest text-gold">
-                Standing order payment
-              </p>
-              {programme.price && (
-                <p className="mt-2 text-white">{programme.price}</p>
-              )}
-              <dl className="mt-3 space-y-1 text-muted">
-                <div className="flex justify-between gap-3">
-                  <dt>Account name</dt>
-                  <dd className="text-white">
-                    {standingOrderDetails.accountName}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt>Bank</dt>
-                  <dd className="text-white">{standingOrderDetails.bankName}</dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt>Sort code</dt>
-                  <dd className="text-white">{standingOrderDetails.sortCode}</dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt>Account number</dt>
-                  <dd className="text-white">
-                    {standingOrderDetails.accountNumber}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt>Reference</dt>
-                  <dd className="text-white">
-                    {standingOrderDetails.referenceNote}
-                  </dd>
-                </div>
-              </dl>
-              <div className="mt-4 flex items-start gap-3 border-t border-border-subtle pt-4">
-                <Controller
-                  control={control}
-                  name="consent.paymentAgreementAccepted"
-                  render={({ field }) => (
-                    <Checkbox
-                      id="consent.paymentAgreementAccepted"
-                      checked={field.value === true}
-                      onCheckedChange={(checked) =>
-                        field.onChange(checked === true)
-                      }
-                    />
-                  )}
-                />
-                <Label
-                  htmlFor="consent.paymentAgreementAccepted"
-                  className="font-normal leading-relaxed"
-                >
-                  I agree to set up a standing order for this programme as
-                  described in the{" "}
-                  <Link href="/terms" className="text-gold underline-offset-4 hover:underline">
-                    payment terms
-                  </Link>
-                  . *
-                </Label>
-              </div>
-              <FieldError
-                id="consent-payment-error"
-                message={errors.consent?.paymentAgreementAccepted?.message}
-              />
-            </div>
-
             {submitError && (
               <p role="alert" className="text-sm text-red-300">
                 {submitError}
@@ -537,7 +754,7 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
           </section>
         )}
 
-        {step === 5 && result && (
+        {step === 6 && result && (
           <section className="rounded-xl border border-border-subtle bg-card p-8 text-center">
             <CheckCircle2
               aria-hidden
