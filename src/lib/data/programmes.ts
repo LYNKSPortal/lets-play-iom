@@ -29,7 +29,7 @@ export const programmes: Programme[] = [
     status: "fully-booked",
     sessionInfo: "After-school sessions during term time",
     location: "Isle of Man",
-    price: null,
+    price: "£39.50 per month (standing order, term-time only)",
     published: true,
   },
   {

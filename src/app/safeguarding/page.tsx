@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LegalPage } from "@/components/ui/legal-page";
 import { siteConfig } from "@/config/site";
 
@@ -52,9 +53,21 @@ export default function SafeguardingPage() {
         <h2>Photography and media</h2>
         <p>
           Where photography or video of sessions is used for promotional
-          purposes, we seek parent or guardian consent in advance (see our
-          booking process). You can withdraw consent at any time by
-          contacting us.
+          purposes, we seek parent or guardian consent in advance as part of
+          registration or booking. Full consent terms are set out in our{" "}
+          <Link href="/terms" className="text-gold hover:underline">
+            Terms &amp; Conditions
+          </Link>
+          . You can withdraw consent at any time by contacting us.
+        </p>
+      </section>
+
+      <section>
+        <h2>Communication</h2>
+        <p>
+          Let&apos;s Play uses WhatsApp as its primary communication
+          platform for sharing information about events, programmes and
+          updates with parents and guardians.
         </p>
       </section>
     </LegalPage>

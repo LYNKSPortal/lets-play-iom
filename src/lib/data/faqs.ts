@@ -15,7 +15,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
     {
       question: "How much does it cost?",
       answer:
-        "Details coming soon. Please contact us for current pricing and availability.",
+        "£39.50 per month, paid by standing order on the 1st of each month. This covers term-time sessions only, there's no payment due in August, and if your child joins partway through a month a one-off payment covers the remainder of that month. Full payment terms are on our Terms & Conditions page.",
     },
     {
       question: "The programme shows fully booked, can I still enquire?",
