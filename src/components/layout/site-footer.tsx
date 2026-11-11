@@ -119,15 +119,17 @@ export function SiteFooter() {
               href="https://wearelynks.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs text-muted transition-colors hover:text-white"
+              className="flex items-center gap-3 rounded-2xl border border-border-subtle px-5 py-3 transition-colors hover:border-gold"
             >
-              Powered by
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted">
+                Powered by
+              </span>
               <Image
                 src="/powered-by-lynks.png"
                 alt="We Are LYNKS"
-                width={109}
-                height={30}
-                className="h-4 w-auto"
+                width={218}
+                height={60}
+                className="h-7 w-auto"
               />
             </a>
           </div>
