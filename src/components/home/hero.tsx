@@ -17,7 +17,7 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-36 sm:px-8">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold sm:text-sm">
-            Isle of Man Football Development
+            Isle of Man Football Development Centre
           </p>
           <h1 className="mt-5 max-w-4xl font-display text-6xl font-bold uppercase leading-[0.85] tracking-wide text-white sm:text-7xl md:text-8xl lg:text-9xl">
             Where young players <span className="text-gold">grow.</span>
