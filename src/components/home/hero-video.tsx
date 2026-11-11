@@ -32,7 +32,7 @@ export function HeroVideo() {
       <img
         src={poster}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        className="hero-video-frame absolute inset-0 h-full w-full object-cover"
       />
     );
   }
@@ -40,7 +40,7 @@ export function HeroVideo() {
   return (
     <MuxBackgroundVideo
       src={`https://stream.mux.com/${MUX_PLAYBACK_ID}.m3u8`}
-      className="absolute inset-0 h-full w-full [&_video]:h-full [&_video]:w-full [&_video]:object-cover"
+      className="hero-video-frame absolute inset-0 h-full w-full overflow-hidden"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={poster} alt="" className="h-full w-full object-cover" />

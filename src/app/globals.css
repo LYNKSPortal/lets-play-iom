@@ -54,6 +54,34 @@ body {
   background-size: 100% 100%, 56px 56px, 56px 56px;
 }
 
+/*
+ * Hero background video/poster.
+ * Default: cover the frame normally (landscape source, landscape frame).
+ * On narrow (portrait) viewports, the source footage is landscape, so we
+ * rotate it 90deg and swap its box dimensions — this fills a portrait
+ * screen edge-to-edge using the video's long axis instead of cropping
+ * heavily from a straight landscape cover.
+ */
+.hero-video-frame video,
+.hero-video-frame img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 639px) {
+  .hero-video-frame video,
+  .hero-video-frame img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100svh;
+    height: 100svw;
+    max-width: none;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
