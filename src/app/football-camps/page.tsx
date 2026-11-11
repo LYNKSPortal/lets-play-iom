@@ -12,7 +12,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Football Camps",
   description:
-    "Let's Play is the Isle of Man's leading football development centre, running football camps packed with skills, games, teamwork and fun every school holiday.",
+    "Let's Play is the Isle of Man's leading football development centre for boys and girls, running football camps packed with skills, games, teamwork and fun every school holiday.",
   alternates: { canonical: "/football-camps" },
 };
 
@@ -40,7 +40,7 @@ export default function FootballCampsPage() {
       <PageHero
         eyebrow="Football Camps"
         title="School holidays. Sorted."
-        description="Let's Play is the Isle of Man's leading football development centre, providing high-quality football camps for children of all abilities."
+        description="Let's Play is the Isle of Man's leading football development centre for boys and girls, providing high-quality football camps for children of all abilities."
       />
 
       <section className="border-b border-border-subtle bg-surface px-5 py-16 sm:px-8 md:py-20">

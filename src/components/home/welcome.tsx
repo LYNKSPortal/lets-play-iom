@@ -22,9 +22,10 @@ export function Welcome() {
           />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
             <p>
-              We are the Isle of Man&apos;s football development centre for
-              boys and girls, providing after-school football programmes and
-              exciting school-holiday camps for young players.
+              We are the Isle of Man&apos;s leading football development
+              centre for boys and girls, providing after-school football
+              programmes and exciting school-holiday camps for young
+              players.
             </p>
             <p>
               Our sessions are designed to nurture talent, improve skills and
