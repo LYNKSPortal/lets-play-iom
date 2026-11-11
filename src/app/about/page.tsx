@@ -30,6 +30,7 @@ const sections = [
       "We are the Isle of Man's leading football development centre for boys and girls. Let's Play was founded in 2024 with a simple idea: to give young footballers a place to learn, play and grow.",
       "Since then, we've grown into the Island's leading football development centre, setting high standards through experienced coaches with a proven track record of working with children. We offer after-school programmes and school-holiday camps across the Island, with over 150 children now taking part in our weekly programmes.",
     ],
+    image: "/Built-on-the-Isle-of-Man.jpg",
   },
   {
     eyebrow: "Our Approach",
@@ -46,6 +47,7 @@ const sections = [
       "Alongside skill development, we focus on confidence, communication and teamwork, the things that help young players thrive on the pitch and off it.",
       "Friendships made at Let's Play often last long after the final whistle.",
     ],
+    image: "/Football-builds-more.jpg",
   },
   {
     eyebrow: "Safe & Supportive",
@@ -109,15 +111,27 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className={i % 2 === 1 ? "lg:order-1" : ""}>
-              <div className="bg-pitch flex aspect-4/3 items-center justify-center overflow-hidden rounded-xl border border-border-subtle">
-                <Image
-                  src="/images/easter-camp.png"
-                  alt="Let's Play gold football mark"
-                  width={420}
-                  height={320}
-                  className="h-auto w-1/2 opacity-80"
-                />
-              </div>
+              {section.image ? (
+                <div className="relative aspect-4/3 overflow-hidden rounded-xl border border-border-subtle">
+                  <Image
+                    src={section.image}
+                    alt={section.title}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="bg-pitch flex aspect-4/3 items-center justify-center overflow-hidden rounded-xl border border-border-subtle">
+                  <Image
+                    src="/images/easter-camp.png"
+                    alt="Let's Play gold football mark"
+                    width={420}
+                    height={320}
+                    className="h-auto w-1/2 opacity-80"
+                  />
+                </div>
+              )}
             </Reveal>
           </div>
         </section>
