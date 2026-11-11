@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "150+", label: "Children taking part in our weekly programmes" },
-  { value: "Boys & Girls", label: "Every programme is open to all young players" },
+  { value: "Boys & Girls", label: "Every programme accommodates boys and girls" },
   { value: "Isle of Man", label: "Proudly based and coaching across the Island" },
 ];
 
