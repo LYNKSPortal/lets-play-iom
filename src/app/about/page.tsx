@@ -39,6 +39,7 @@ const sections = [
       "We believe young players develop best when sessions are structured but enjoyable, building real technical ability through games, challenges and plenty of touches on the ball.",
       "Every session is built around the player in front of us, not a one-size-fits-all script.",
     ],
+    image: "/Development-not-just.jpg",
   },
   {
     eyebrow: "Confidence & Teamwork",
