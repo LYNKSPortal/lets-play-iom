@@ -12,6 +12,7 @@ export const siteConfig = {
   location: "Isle of Man",
   logo: "/images/lets-play-logo.png",
   facebookUrl: "https://www.facebook.com/LetsPlayIOM",
+  instagramUrl: "https://www.instagram.com/ltsplyiom/",
 } as const;
 
 export const mainNav: NavItem[] = [

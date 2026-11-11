@@ -98,15 +98,6 @@ export default async function ProgrammeDetailPage({
               </ul>
             </Reveal>
 
-            <Reveal delay={0.15} className="mt-12">
-              <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white">
-                Who It&apos;s For
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-muted">
-                {programme.whoItsFor}
-              </p>
-            </Reveal>
-
             {faqs.length > 0 && (
               <Reveal delay={0.2} className="mt-12">
                 <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white">

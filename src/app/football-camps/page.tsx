@@ -3,7 +3,7 @@ import { HeartHandshake } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { CampCard } from "@/components/camps/camp-card";
 import { EmptyState } from "@/components/ui/empty-state";
-import { FacebookIcon } from "@/components/ui/icons";
+import { FacebookIcon, InstagramIcon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -83,7 +83,7 @@ export default function FootballCampsPage() {
           ) : (
             <EmptyState
               title="No upcoming camps right now"
-              description="For the latest camps, check out our Facebook page for updates, or get in touch through our form."
+              description="For the latest camps, check out our Facebook or Instagram pages for updates, or get in touch through our form."
               action={
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Button asChild>
@@ -93,7 +93,17 @@ export default function FootballCampsPage() {
                       rel="noopener noreferrer"
                     >
                       <FacebookIcon aria-hidden className="size-4" />
-                      Follow on Facebook
+                      Facebook
+                    </a>
+                  </Button>
+                  <Button asChild>
+                    <a
+                      href={siteConfig.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <InstagramIcon aria-hidden className="size-4" />
+                      Instagram
                     </a>
                   </Button>
                   <Button asChild variant="secondary">
