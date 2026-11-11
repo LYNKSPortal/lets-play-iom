@@ -37,10 +37,10 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-28">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-32">
         <Link
           href="/"
-          className="relative flex shrink-0 items-center gap-3"
+          className="relative flex shrink-0 items-center gap-3 py-3 md:py-4"
           aria-label={`${siteConfig.name}, home`}
         >
           <Image
