@@ -111,9 +111,26 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
-          <p className="text-xs text-muted">
-            &copy; <CurrentYear /> Let&apos;s Play. All rights reserved.
-          </p>
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+            <p className="text-xs text-muted">
+              &copy; <CurrentYear /> Let&apos;s Play. All rights reserved.
+            </p>
+            <a
+              href="https://wearelynks.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs text-muted transition-colors hover:text-white"
+            >
+              Powered by
+              <Image
+                src="/powered-by-lynks.png"
+                alt="We Are LYNKS"
+                width={109}
+                height={30}
+                className="h-4 w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
