@@ -56,6 +56,7 @@ const sections = [
       "Every session takes place in a positive, safe environment, with coaches who care about getting it right for every child, not just the most talented ones.",
       "See our Coaches and Safeguarding pages for more on how we keep sessions safe.",
     ],
+    image: "/Coaching-you-can-trust.jpg",
   },
 ];
 
