@@ -17,7 +17,7 @@ export default function ProgrammesPage() {
       <PageHero
         eyebrow="Our Football Programmes"
         title="Our Football Programmes."
-        description="Let's Play helps young footballers develop their skills through structured, enjoyable sessions — whatever their starting point."
+        description="As the Isle of Man's football development centre for boys and girls, Let's Play helps young footballers develop their skills through structured, enjoyable sessions — whatever their starting point."
       />
       <section className="px-5 py-16 sm:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">

@@ -8,17 +8,23 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Let's Play is a football development centre rooted in the Isle of Man, helping young players grow in skill, confidence and enjoyment of the game.",
+    "Let's Play is the Isle of Man's football development centre for boys and girls, with over 150 children taking part in our weekly programmes.",
   alternates: { canonical: "/about" },
 };
+
+const stats = [
+  { value: "150+", label: "Children taking part in our weekly programmes" },
+  { value: "Boys & Girls", label: "Every programme is open to all young players" },
+  { value: "Isle of Man", label: "Proudly based and coaching across the Island" },
+];
 
 const sections = [
   {
     eyebrow: "Our Roots",
     title: "Built on the Isle of Man.",
     body: [
-      "Let's Play started with a simple idea: give young footballers on the Isle of Man a place to learn, play and grow — properly coached, genuinely supportive, and fun from the first session.",
-      "Since then, we've grown into a football development centre offering after-school programmes and school-holiday camps across the Island.",
+      "We are the Isle of Man's football development centre for boys and girls. Let's Play started with a simple idea: give young footballers a place to learn, play and grow — properly coached, genuinely supportive, and fun from the first session.",
+      "Since then, we've grown into a football development centre offering after-school programmes and school-holiday camps across the Island, with over 150 children now taking part in our weekly programmes.",
     ],
   },
   {
@@ -53,8 +59,21 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Let's Play"
         title="Football with purpose."
-        description="A football development centre on the Isle of Man, built around young players — their skills, their confidence, and their enjoyment of the game."
+        description="We are the Isle of Man's football development centre for boys and girls — built around young players, their skills, their confidence, and their enjoyment of the game."
       />
+
+      <section className="border-b border-border-subtle bg-surface px-5 py-10 sm:px-8">
+        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-3">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center sm:text-left">
+              <p className="font-display text-4xl font-bold text-gold">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-muted">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {sections.map((section, i) => (
         <section

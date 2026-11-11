@@ -22,14 +22,15 @@ export function Welcome() {
           />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
             <p>
-              Let&apos;s Play is a football development centre on the Isle of
-              Man, providing after-school football programmes and exciting
-              school-holiday camps for young players.
+              We are the Isle of Man&apos;s football development centre for
+              boys and girls, providing after-school football programmes and
+              exciting school-holiday camps for young players.
             </p>
             <p>
               Our sessions are designed to nurture talent, improve skills and
               foster a real love for the beautiful game — in a fun, supportive
-              environment where every young footballer can shine.
+              environment where every young footballer can shine. Over 150
+              children currently take part in our weekly programmes.
             </p>
           </div>
           <ul className="mt-8 space-y-3.5">
@@ -52,6 +53,12 @@ export function Welcome() {
               height={684}
               className="mx-auto h-auto w-full max-w-md p-14 opacity-90 md:p-20"
             />
+            <div className="absolute bottom-5 left-5 right-5 rounded-lg border border-gold/30 bg-black/70 px-5 py-4 backdrop-blur-sm sm:left-auto sm:right-5 sm:w-56">
+              <p className="font-display text-4xl font-bold text-gold">150+</p>
+              <p className="mt-1 text-xs uppercase tracking-widest text-white/80">
+                Children taking part in our weekly programmes
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
