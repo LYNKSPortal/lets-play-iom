@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const safeguardingPoints = [
-  "Lead coaches are accredited and qualified by the Football Association (FA).",
+  "Lead coaches hold UEFA B and C coaching licences.",
   "Coaches undergo enhanced DBS (Disclosure and Barring Service) checks.",
   "All coaches complete comprehensive safeguarding training.",
-  "Junior coaches are supported through their own FA coaching qualifications with mentorship and development opportunities.",
+  "Junior coaches are supported through their own coaching qualifications with mentorship and development opportunities.",
 ];
 
 export default function CoachesPage() {
@@ -28,6 +28,31 @@ export default function CoachesPage() {
         title="Great coaches. Great experiences."
         description="Meet the team behind Let's Play — coaches dedicated to helping every young player grow, learn and enjoy the game."
       />
+
+      <section className="border-b border-border-subtle bg-surface px-5 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-muted md:text-lg">
+          <p>
+            At Let&apos;s Play, our experienced coaching team is led by UEFA
+            B and C Licence-qualified coaches. All of our coaches have a
+            strong football background and a genuine passion for helping
+            children develop their skills, confidence and love for the
+            game.
+          </p>
+          <p>
+            The same experienced coaching team also delivers our football
+            camps, ensuring children benefit from quality coaching,
+            encouragement and support both during our regular sessions and
+            holiday camps.
+          </p>
+          <p>
+            We pride ourselves on creating a fun, positive and supportive
+            environment where every child feels valued, encouraged and
+            included. Our aim is to ensure every child gets the most out of
+            their experience, develops at their own pace and, most
+            importantly, enjoys every moment on the pitch.
+          </p>
+        </div>
+      </section>
 
       <section className="px-5 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">

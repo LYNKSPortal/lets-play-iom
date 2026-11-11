@@ -6,7 +6,7 @@ const features = [
   {
     icon: GraduationCap,
     title: "Qualified Coaching",
-    text: "Sessions led by experienced coaches focused on developing young players the right way.",
+    text: "Sessions led by UEFA B and C Licence-qualified coaches, focused on developing young players the right way.",
   },
   {
     icon: TrendingUp,
