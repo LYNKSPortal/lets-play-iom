@@ -33,4 +33,16 @@ export const coaches: Coach[] = [
     role: "Junior Coach",
     image: "/images/coach-cavin-hannay.jpg",
   },
+  {
+    slug: "andy-asbridge",
+    name: "Andy Asbridge",
+    role: "Coach",
+    image: "/images/coach-andy-asbridge.jpg",
+  },
+  {
+    slug: "andrew-gosnell",
+    name: "Andrew Gosnell",
+    role: "Coach",
+    image: "/images/coach-andyrew-gosnell.jpg",
+  },
 ];

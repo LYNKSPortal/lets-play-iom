@@ -6,7 +6,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 
 export function CoachesPreview() {
-  const previewCoaches = coaches.filter((c) => c.role !== "Owner & Coach");
+  const previewCoaches = coaches
+    .filter((c) => c.role !== "Owner & Coach")
+    .slice(0, 4);
 
   return (
     <section className="px-5 py-20 sm:px-8 md:py-28">
