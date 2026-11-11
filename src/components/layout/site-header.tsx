@@ -54,7 +54,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
-          {mainNav.slice(1).map((item) => {
+          {mainNav.map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
