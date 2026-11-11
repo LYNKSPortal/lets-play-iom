@@ -64,7 +64,16 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ["/images/lets-play-logo.png"],
   },
-  manifest: "/site.webmanifest",
+  manifest: "/fav/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/fav/favicon.svg", type: "image/svg+xml" },
+      { url: "/fav/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/fav/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/fav/favicon.ico",
+    apple: [{ url: "/fav/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   robots: {
     index: true,
     follow: true,
