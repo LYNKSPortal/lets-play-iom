@@ -1,4 +1,5 @@
 import type { BookingPayload } from "@/types";
+import { sendNotificationEmail, emailConfigured, escapeHtml } from "@/lib/email";
 
 export interface BookingResult {
   success: true;
@@ -12,25 +13,25 @@ export interface BookingError {
   error: string;
 }
 
+function generateReference(): string {
+  return `LP-${Date.now().toString(36).toUpperCase()}`;
+}
+
 /**
  * Server-side booking submission.
  *
- * In production this should call a secure AWS-hosted API (API Gateway +
- * Lambda, or similar) that performs a transactional capacity check against
- * DynamoDB/PostgreSQL before persisting the booking and sending a
- * confirmation email. That integration is intentionally not implemented
- * here — wire `BOOKING_API_URL` and `BOOKING_API_KEY` to enable it.
+ * Sends a notification email (via Resend) to the Let's Play inbox with the
+ * full booking request. There is no automated capacity-checking backend
+ * (AWS API Gateway + Lambda + DynamoDB/PostgreSQL) yet, so this does not
+ * claim the place is guaranteed — staff confirm manually by email/phone.
  *
- * Until a real backend is configured, this function runs in demo mode and
- * never claims that a reservation has actually been made.
+ * Until `RESEND_API_KEY` is configured, this runs in a clearly labelled
+ * demo mode and never claims a real request was sent.
  */
 export async function submitBooking(
   payload: BookingPayload
 ): Promise<BookingResult | BookingError> {
-  const apiUrl = process.env.BOOKING_API_URL;
-
-  if (!apiUrl) {
-    // Demo mode — no backend configured. Do not persist or claim a real booking.
+  if (!emailConfigured) {
     return {
       success: true,
       demo: true,
@@ -40,38 +41,45 @@ export async function submitBooking(
     };
   }
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(process.env.BOOKING_API_KEY
-          ? { Authorization: `Bearer ${process.env.BOOKING_API_KEY}` }
-          : {}),
-      },
-      body: JSON.stringify(payload),
-    });
+  const reference = generateReference();
+  const { parent, player, campSlug } = payload;
 
-    if (!response.ok) {
-      return {
-        success: false,
-        error:
-          "We couldn't confirm your booking. Please try again or contact us directly.",
-      };
-    }
+  const html = `
+    <h2>New camp booking request</h2>
+    <p><strong>Reference:</strong> ${reference}</p>
+    <p><strong>Camp:</strong> ${escapeHtml(campSlug)}</p>
+    <h3>Parent / Guardian</h3>
+    <p><strong>Name:</strong> ${escapeHtml(parent.fullName)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(parent.email)}</p>
+    <p><strong>Phone:</strong> ${escapeHtml(parent.phone)}</p>
+    <h3>Player</h3>
+    <p><strong>Name:</strong> ${escapeHtml(player.fullName)}</p>
+    <p><strong>Date of birth:</strong> ${escapeHtml(player.dateOfBirth)}</p>
+    <p><strong>Emergency contact:</strong> ${escapeHtml(player.emergencyContactName)} (${escapeHtml(player.emergencyContactPhone)})</p>
+    ${player.medicalInfo ? `<p><strong>Medical/accessibility info:</strong> ${escapeHtml(player.medicalInfo).replace(/\n/g, "<br />")}</p>` : ""}
+    <p><strong>Photo consent:</strong> ${payload.consent.photoConsent ? "Yes" : "No"}</p>
+  `;
 
-    const data = (await response.json()) as { reference: string };
-    return {
-      success: true,
-      demo: false,
-      reference: data.reference,
-      message: "Your booking has been confirmed.",
-    };
-  } catch {
+  const result = await sendNotificationEmail({
+    subject: `New camp booking request: ${campSlug} (${reference})`,
+    html,
+    replyTo: parent.email,
+  });
+
+  if (!result.success) {
+    console.error("Failed to send booking email", result.error);
     return {
       success: false,
       error:
-        "We couldn't reach the booking service. Please try again or contact us directly.",
+        "We couldn't confirm your booking. Please try again or contact us directly.",
     };
   }
+
+  return {
+    success: true,
+    demo: false,
+    reference,
+    message:
+      "Your booking request has been sent to our team. We'll be in touch to confirm your place.",
+  };
 }

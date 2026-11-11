@@ -44,29 +44,23 @@ export const announcement = {
 };
 
 /**
- * Whether the booking backend (AWS API) is configured.
- * Controlled via env var; when false the booking flow runs in a clearly
- * labelled demo mode and never claims a real reservation was made.
+ * Whether email-based form delivery (via Resend) is configured.
+ * Mirrors the server-only `RESEND_API_KEY` presence to the client so forms
+ * can show accurate demo-mode messaging. Set
+ * `NEXT_PUBLIC_EMAIL_NOTIFICATIONS_ENABLED=true` once `RESEND_API_KEY` is
+ * configured (see .env.example).
  */
-export const bookingBackendConfigured =
-  process.env.NEXT_PUBLIC_BOOKING_API_URL !== undefined &&
-  process.env.NEXT_PUBLIC_BOOKING_API_URL.length > 0;
+export const emailNotificationsEnabled =
+  process.env.NEXT_PUBLIC_EMAIL_NOTIFICATIONS_ENABLED === "true";
 
-/**
- * Whether the contact form backend (email delivery) is configured.
- */
-export const contactBackendConfigured =
-  process.env.CONTACT_FORM_PROVIDER !== undefined &&
-  process.env.CONTACT_FORM_PROVIDER.length > 0;
+/** Whether the booking flow sends real email notifications (via Resend). */
+export const bookingBackendConfigured = emailNotificationsEnabled;
 
-/**
- * Whether the programme registration backend (AWS API) is configured.
- * Controlled via env var; when false the registration flow runs in a
- * clearly labelled demo mode and never claims a real registration was made.
- */
-export const registrationBackendConfigured =
-  process.env.NEXT_PUBLIC_REGISTRATION_API_URL !== undefined &&
-  process.env.NEXT_PUBLIC_REGISTRATION_API_URL.length > 0;
+/** Whether the contact form sends real email notifications (via Resend). */
+export const contactBackendConfigured = emailNotificationsEnabled;
+
+/** Whether the registration flow sends real email notifications (via Resend). */
+export const registrationBackendConfigured = emailNotificationsEnabled;
 
 /** Standing order bank details for programme registration payments. */
 export const standingOrderDetails = {
