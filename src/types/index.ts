@@ -95,6 +95,7 @@ export interface BookingPayload {
 
 export interface RegistrationPayload {
   programmeSlug: string;
+  source?: "public" | "direct";
   parent: {
     fullName: string;
     email: string;

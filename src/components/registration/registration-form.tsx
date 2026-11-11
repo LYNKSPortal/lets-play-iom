@@ -26,7 +26,18 @@ import { RegistrationStepper } from "@/components/registration/registration-step
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 
-export function RegistrationForm({ programme }: { programme: Programme }) {
+export function RegistrationForm({
+  programme,
+  source = "public",
+}: {
+  programme: Programme;
+  /**
+   * "public" (default) is used by /register, which is blocked server-side
+   * if the programme is fully booked or invite-only. "direct" is used by
+   * the unlisted /join links, which bypass that check.
+   */
+  source?: "public" | "direct";
+}) {
   const [step, setStep] = useState<Step>(1);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -46,6 +57,7 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
     resolver: zodResolver(registrationFormSchema),
     defaultValues: {
       programmeSlug: programme.slug,
+      source,
       parent: { fullName: "", email: "", phone: "" },
       child: {
         fullName: "",
@@ -138,6 +150,7 @@ export function RegistrationForm({ programme }: { programme: Programme }) {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" {...register("programmeSlug")} />
+        <input type="hidden" {...register("source")} />
 
         {step === 1 && (
           <section className="rounded-xl border border-border-subtle bg-card p-6">

@@ -56,7 +56,11 @@ export async function POST(request: Request) {
       { status: 404 }
     );
   }
-  if (programme.accessType !== "open" || programme.status === "fully-booked") {
+  const isPublicSubmission = parsed.data.source !== "direct";
+  if (
+    isPublicSubmission &&
+    (programme.accessType !== "open" || programme.status === "fully-booked")
+  ) {
     return NextResponse.json(
       {
         success: false,

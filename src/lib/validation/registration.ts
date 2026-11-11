@@ -48,6 +48,13 @@ export const registrationConsentSchema = z.object({
 
 export const registrationFormSchema = z.object({
   programmeSlug: z.string().min(1),
+  /**
+   * "public" submissions (from /register) are blocked server-side if the
+   * programme is fully booked or invite-only. "direct" submissions (from
+   * the unlisted /join links shared directly with a family) bypass that
+   * check, since staff are handling that sign-up individually.
+   */
+  source: z.enum(["public", "direct"]).optional(),
   parent: parentSchema,
   child: childSchema,
   consent: registrationConsentSchema,
