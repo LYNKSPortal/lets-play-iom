@@ -59,7 +59,7 @@ export default async function CampDetailPage({
           <StatusBadge status={camp.status} />
           {past && (
             <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-              Archived — this camp has taken place
+              Archived, this camp has taken place
             </span>
           )}
         </div>

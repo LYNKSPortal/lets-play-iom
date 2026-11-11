@@ -421,7 +421,7 @@ export function BookingForm({ camp }: { camp: Camp }) {
             </h2>
             {result.demo && (
               <p className="mx-auto mt-3 max-w-md rounded-lg border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-200">
-                This was a demo submission. No real booking has been made —
+                This was a demo submission. No real booking has been made,
                 please contact us directly to secure your child&apos;s place
                 until our booking backend is live.
               </p>

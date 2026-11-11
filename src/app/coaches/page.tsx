@@ -9,7 +9,7 @@ import { coaches } from "@/lib/data/coaches";
 export const metadata: Metadata = {
   title: "Our Coaches",
   description:
-    "Meet the Let's Play coaching team on the Isle of Man — experienced coaches focused on safe, positive youth football development.",
+    "Meet the Let's Play coaching team on the Isle of Man, experienced coaches focused on safe, positive youth football development.",
   alternates: { canonical: "/coaches" },
 };
 
@@ -26,7 +26,7 @@ export default function CoachesPage() {
       <PageHero
         eyebrow="Our Coaches"
         title="Great coaches. Great experiences."
-        description="Meet the team behind Let's Play — coaches dedicated to helping every young player grow, learn and enjoy the game."
+        description="Meet the team behind Let's Play, coaches dedicated to helping every young player grow, learn and enjoy the game."
       />
 
       <section className="border-b border-border-subtle bg-surface px-5 py-16 sm:px-8 md:py-20">

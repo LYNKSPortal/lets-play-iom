@@ -36,7 +36,7 @@ export async function submitBooking(
       demo: true,
       reference: `DEMO-${Date.now().toString(36).toUpperCase()}`,
       message:
-        "This is a demo submission. No real booking has been made — our secure booking backend is not yet connected.",
+        "This is a demo submission. No real booking has been made, our secure booking backend is not yet connected.",
     };
   }
 

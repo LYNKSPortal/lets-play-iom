@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Let's Play — football programmes and camps on the Isle of Man. Email, call, or send us a message.",
+    "Get in touch with Let's Play, football programmes and camps on the Isle of Man. Email, call, or send us a message.",
   alternates: { canonical: "/contact" },
 };
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk football."
-        description="Questions about our programmes, camps, or a booking? Reach out — we're happy to help."
+        description="Questions about our programmes, camps, or a booking? Reach out, we're happy to help."
       />
 
       <section className="px-5 py-16 sm:px-8 md:py-24">

@@ -23,8 +23,8 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: "Let's Play | Football Development Centre — Isle of Man",
-    template: "%s | Let's Play — Isle of Man Football Development",
+    default: "Let's Play | Football Development Centre, Isle of Man",
+    template: "%s | Let's Play, Isle of Man Football Development",
   },
   description:
     "After-school football programmes and school-holiday football camps for young players on the Isle of Man. Kids' football coaching focused on skills, confidence and fun.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteConfig.domain,
     siteName: "Let's Play Football Development Centre",
-    title: "Let's Play | Football Development Centre — Isle of Man",
+    title: "Let's Play | Football Development Centre, Isle of Man",
     description: siteConfig.description,
     images: [
       {

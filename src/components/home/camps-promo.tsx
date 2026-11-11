@@ -62,7 +62,7 @@ export function CampsPromo() {
             </div>
           ) : (
             <p className="mt-8 rounded-xl border border-dashed border-border px-5 py-4 text-sm text-muted">
-              New camp dates are announced soon — check back or contact us to
+              New camp dates are announced soon, check back or contact us to
               join the waiting list.
             </p>
           )}

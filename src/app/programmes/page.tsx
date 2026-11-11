@@ -7,7 +7,7 @@ import { programmes } from "@/lib/data/programmes";
 export const metadata: Metadata = {
   title: "Our Football Programmes",
   description:
-    "Structured after-school football programmes for boys and girls on the Isle of Man — open-access Football and Full Throttle Programmes, plus our invite-only Gold Programmes.",
+    "Structured after-school football programmes for boys and girls on the Isle of Man, open-access Football and Full Throttle Programmes, plus our invite-only Gold Programmes.",
   alternates: { canonical: "/programmes" },
 };
 
@@ -17,7 +17,7 @@ export default function ProgrammesPage() {
       <PageHero
         eyebrow="Our Football Programmes"
         title="Our Football Programmes."
-        description="As the Isle of Man's leading football development centre for boys and girls, Let's Play helps young footballers develop their skills through structured, enjoyable sessions — whatever their starting point."
+        description="As the Isle of Man's leading football development centre for boys and girls, Let's Play helps young footballers develop their skills through structured, enjoyable sessions, whatever their starting point."
       />
 
       <section className="border-b border-border-subtle bg-surface px-5 py-14 sm:px-8 md:py-16">

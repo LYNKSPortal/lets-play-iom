@@ -14,7 +14,7 @@ export const programmes: Programme[] = [
       "Fun, structured after-school football sessions helping young players develop their skills and confidence.",
     longDescription: [
       "Our Football Programmes are open-access after-school sessions for boys and girls, designed to give every young player the chance to enjoy the game, whatever their starting point. Children of all abilities play together, with coaches implementing the Let's Play curriculum throughout every session.",
-      "Sessions focus on ball mastery, game understanding and teamwork in a positive, supportive environment — building confident players who love coming back week after week.",
+      "Sessions focus on ball mastery, game understanding and teamwork in a positive, supportive environment, building confident players who love coming back week after week.",
     ],
     benefits: [
       "Structured, age-appropriate coaching sessions",
@@ -23,7 +23,7 @@ export const programmes: Programme[] = [
       "Confidence on and off the ball, on and off the pitch",
     ],
     whoItsFor:
-      "Open to all children in school years 1 to 6 — no trial or selection needed.",
+      "Open to all children in school years 1 to 6, no trial or selection needed.",
     yearGroups: "Years 1–6",
     accessType: "open",
     status: "fully-booked",
@@ -40,7 +40,7 @@ export const programmes: Programme[] = [
     description:
       "Dedicated football development sessions designed to challenge and support young players.",
     longDescription: [
-      "Full Throttle is for young players who want more from their football — a dedicated development programme for boys and girls, designed to stretch, challenge and support players who are ready to go further. As with all our open-access programmes, coaches implement the Let's Play curriculum throughout every session.",
+      "Full Throttle is for young players who want more from their football, a dedicated development programme for boys and girls, designed to stretch, challenge and support players who are ready to go further. As with all our open-access programmes, coaches implement the Let's Play curriculum throughout every session.",
       "With a sharper focus on technical detail and game intensity, Full Throttle helps committed players take the next step in their development.",
     ],
     benefits: [
@@ -68,7 +68,7 @@ export const programmes: Programme[] = [
       "Invite-only programmes for players at a more advanced stage of their footballing journey, training alongside other invited players.",
     longDescription: [
       "Our Gold Programmes are invite-only, for players who are at a more advanced stage of their footballing journey and ready to train alongside other invited players.",
-      "As with every Let's Play programme, Gold sessions are led by experienced coaches — including UEFA B and C Licence-qualified coaches — who bring their football backgrounds and experience to every session.",
+      "As with every Let's Play programme, Gold sessions are led by experienced coaches, including UEFA B and C Licence-qualified coaches, who bring their football backgrounds and experience to every session.",
     ],
     benefits: [
       "A higher standard of training alongside other invited players",

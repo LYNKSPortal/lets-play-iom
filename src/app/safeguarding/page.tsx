@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function SafeguardingPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Safeguarding" updated="Draft — pending review">
+    <LegalPage eyebrow="Legal" title="Safeguarding" updated="Draft, pending review">
       <section>
         <h2>Our commitment</h2>
         <p>

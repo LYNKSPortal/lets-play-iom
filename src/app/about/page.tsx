@@ -23,7 +23,7 @@ const sections = [
     eyebrow: "Our Roots",
     title: "Built on the Isle of Man.",
     body: [
-      "We are the Isle of Man's leading football development centre for boys and girls. Let's Play started with a simple idea: give young footballers a place to learn, play and grow — properly coached, genuinely supportive, and fun from the first session.",
+      "We are the Isle of Man's leading football development centre for boys and girls. Let's Play started with a simple idea: give young footballers a place to learn, play and grow, properly coached, genuinely supportive, and fun from the first session.",
       "Since then, we've grown into a football development centre offering after-school programmes and school-holiday camps across the Island, with over 150 children now taking part in our weekly programmes.",
     ],
   },
@@ -31,7 +31,7 @@ const sections = [
     eyebrow: "Our Approach",
     title: "Development, not just drills.",
     body: [
-      "We believe young players develop best when sessions are structured but enjoyable — building real technical ability through games, challenges and plenty of touches on the ball.",
+      "We believe young players develop best when sessions are structured but enjoyable, building real technical ability through games, challenges and plenty of touches on the ball.",
       "Every session is built around the player in front of us, not a one-size-fits-all script.",
     ],
   },
@@ -39,7 +39,7 @@ const sections = [
     eyebrow: "Confidence & Teamwork",
     title: "Football builds more than footballers.",
     body: [
-      "Alongside skill development, we focus on confidence, communication and teamwork — the things that help young players thrive on the pitch and off it.",
+      "Alongside skill development, we focus on confidence, communication and teamwork, the things that help young players thrive on the pitch and off it.",
       "Friendships made at Let's Play often last long after the final whistle.",
     ],
   },
@@ -47,7 +47,7 @@ const sections = [
     eyebrow: "Safe & Supportive",
     title: "Coaching you can trust.",
     body: [
-      "Every session takes place in a positive, safe environment, with coaches who care about getting it right for every child — not just the most talented ones.",
+      "Every session takes place in a positive, safe environment, with coaches who care about getting it right for every child, not just the most talented ones.",
       "See our Coaches and Safeguarding pages for more on how we keep sessions safe.",
     ],
   },
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Let's Play"
         title="Football with purpose."
-        description="We are the Isle of Man's leading football development centre for boys and girls — built around young players, their skills, their confidence, and their enjoyment of the game."
+        description="We are the Isle of Man's leading football development centre for boys and girls, built around young players, their skills, their confidence, and their enjoyment of the game."
       />
 
       <section className="border-b border-border-subtle bg-surface px-5 py-10 sm:px-8">
@@ -119,7 +119,7 @@ export default function AboutPage() {
             Want to find out more?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted">
-            Explore our programmes or get in touch — we&apos;d love to hear
+            Explore our programmes or get in touch, we&apos;d love to hear
             from you.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

@@ -5,7 +5,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
     {
       question: "Who can join the Football Programmes?",
       answer:
-        "The Football Programmes are open access for children in school years 1 to 6. No trial or previous experience is needed — sessions are designed for all ability levels.",
+        "The Football Programmes are open access for children in school years 1 to 6. No trial or previous experience is needed, sessions are designed for all ability levels.",
     },
     {
       question: "When and where do sessions run?",
@@ -18,14 +18,14 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
         "Details coming soon. Please contact us for current pricing and availability.",
     },
     {
-      question: "The programme shows fully booked — can I still enquire?",
+      question: "The programme shows fully booked, can I still enquire?",
       answer:
         "Yes. Send us an enquiry and we'll let you know when spaces open up, or add you to the waiting list.",
     },
     {
       question: "What does my child need to bring?",
       answer:
-        "Details coming soon — we'll confirm kit requirements when your place is confirmed. Football boots and a water bottle are a safe starting point.",
+        "Details coming soon, we'll confirm kit requirements when your place is confirmed. Football boots and a water bottle are a safe starting point.",
     },
   ],
   "full-throttle": [
@@ -37,7 +37,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
     {
       question: "Is Full Throttle invite only?",
       answer:
-        "No — Full Throttle is open access. Our invite-only pathway, Gold Programmes, is a separate step for more advanced players.",
+        "No, Full Throttle is open access. Our invite-only pathway, Gold Programmes, is a separate step for more advanced players.",
     },
     {
       question: "When and where do sessions run?",
@@ -50,7 +50,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
         "Details coming soon. Please contact us for current pricing and availability.",
     },
     {
-      question: "The programme shows fully booked — what now?",
+      question: "The programme shows fully booked, what now?",
       answer:
         "Send an enquiry and we'll add you to the waiting list and contact you when a space becomes available.",
     },
@@ -59,7 +59,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
     {
       question: "How do players join the Gold Programmes?",
       answer:
-        "Gold Programmes are invite only. Players are invited by our coaching team when they're at a more advanced stage of their footballing journey — there isn't an open sign-up for this pathway.",
+        "Gold Programmes are invite only. Players are invited by our coaching team when they're at a more advanced stage of their footballing journey, there isn't an open sign-up for this pathway.",
     },
     {
       question: "What age groups does Gold cover?",
@@ -72,7 +72,7 @@ export const programmeFaqs: Record<string, FaqItem[]> = {
         "Gold sessions are led by our experienced coaches, including UEFA B and C Licence-qualified coaches.",
     },
     {
-      question: "I think my child is ready for Gold — can I ask?",
+      question: "I think my child is ready for Gold, can I ask?",
       answer:
         "Yes, get in touch and we'll be happy to talk through the pathway and how invitations work.",
     },

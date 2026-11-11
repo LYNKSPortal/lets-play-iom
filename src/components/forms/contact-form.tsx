@@ -83,7 +83,7 @@ export function ContactForm() {
           Message sent
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Thanks for getting in touch — we&apos;ll reply as soon as we can.
+          Thanks for getting in touch, we&apos;ll reply as soon as we can.
         </p>
       </div>
     );

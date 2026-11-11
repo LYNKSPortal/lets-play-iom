@@ -41,7 +41,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="relative flex shrink-0 items-center gap-3"
-          aria-label={`${siteConfig.name} — home`}
+          aria-label={`${siteConfig.name}, home`}
         >
           <Image
             src={siteConfig.logo}

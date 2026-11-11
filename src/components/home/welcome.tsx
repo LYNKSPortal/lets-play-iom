@@ -29,7 +29,7 @@ export function Welcome() {
             </p>
             <p>
               Our sessions are designed to nurture talent, improve skills and
-              foster a real love for the beautiful game — in a fun, supportive
+              foster a real love for the beautiful game, in a fun, supportive
               environment where every young footballer can shine. Over 150
               children currently take part in our weekly programmes.
             </p>

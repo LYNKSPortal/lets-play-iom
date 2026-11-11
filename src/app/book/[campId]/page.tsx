@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { campId } = await params;
   const camp = getCamp(campId);
   return {
-    title: camp ? `Book — ${camp.name}` : "Book a Camp",
+    title: camp ? `Book, ${camp.name}` : "Book a Camp",
     robots: { index: false, follow: false },
   };
 }

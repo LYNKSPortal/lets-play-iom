@@ -98,7 +98,7 @@ export default function FootballCampsPage() {
             <SectionHeading
               eyebrow="Past Camps"
               title="Camp archive."
-              description="Previous camps are shown here for reference only — they are not open for booking."
+              description="Previous camps are shown here for reference only and are not open for booking."
               className="mb-10"
             />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

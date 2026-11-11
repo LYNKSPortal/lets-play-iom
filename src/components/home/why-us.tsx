@@ -11,7 +11,7 @@ const features = [
   {
     icon: TrendingUp,
     title: "Player Development",
-    text: "Every session is built around real improvement — technically, tactically and personally.",
+    text: "Every session is built around real improvement, technically, tactically and personally.",
   },
   {
     icon: HeartHandshake,

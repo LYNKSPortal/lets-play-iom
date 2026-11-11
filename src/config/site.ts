@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: "Football Development Centre",
   domain: "https://letsplay.co.im",
   description:
-    "The Isle of Man's leading football development centre for boys and girls — after-school football programmes and school-holiday football camps, with over 150 children taking part in our weekly programmes.",
+    "The Isle of Man's leading football development centre for boys and girls, offering after-school football programmes and school-holiday football camps, with over 150 children taking part in our weekly programmes.",
   email: "info@letsplay.co.im",
   phone: "07624 222766",
   phoneHref: "tel:+447624222766",

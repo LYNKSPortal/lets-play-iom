@@ -8,7 +8,7 @@ import type { Camp } from "@/types";
 export const camps: Camp[] = [
   {
     slug: "easter-2025-week-1",
-    name: "Easter Football Camp — Week 1",
+    name: "Easter Football Camp, Week 1",
     sessionDates: [
       "2025-04-07",
       "2025-04-08",
@@ -31,7 +31,7 @@ export const camps: Camp[] = [
   },
   {
     slug: "easter-2025-week-2",
-    name: "Easter Football Camp — Week 2",
+    name: "Easter Football Camp, Week 2",
     sessionDates: ["2025-04-14", "2025-04-15", "2025-04-16"],
     days: 3,
     pricePence: 9000,
