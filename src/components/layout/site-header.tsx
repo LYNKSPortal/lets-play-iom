@@ -77,7 +77,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <Link href="/football-camps">Book Now</Link>
+            <Link href="/register">Register Now</Link>
           </Button>
           <button
             type="button"

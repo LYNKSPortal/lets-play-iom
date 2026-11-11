@@ -68,7 +68,7 @@ export function MobileNavigation({
           </nav>
           <div className="border-t border-border p-5">
             <Button asChild size="lg" className="w-full">
-              <Link href="/football-camps">Book Now</Link>
+              <Link href="/register">Register Now</Link>
             </Button>
             <a
               href={`mailto:${siteConfig.email}`}

@@ -91,3 +91,14 @@ export const programmes: Programme[] = [
 export function getProgramme(slug: string): Programme | undefined {
   return programmes.find((p) => p.slug === slug && p.published);
 }
+
+/**
+ * The first open-access, non-fully-booked programme, if any. Used to decide
+ * whether site-wide CTAs should point to registration or to a general
+ * enquiry instead.
+ */
+export function getOpenRegistrationProgramme(): Programme | undefined {
+  return programmes.find(
+    (p) => p.published && p.accessType === "open" && p.status !== "fully-booked"
+  );
+}

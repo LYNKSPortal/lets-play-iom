@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/programmes",
+    "/register",
     "/football-camps",
     "/coaches",
     "/about",
