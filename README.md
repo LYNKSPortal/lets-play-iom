@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Let's Play — Football Development Centre
 
-## Getting Started
+Website for Let's Play, a children's football development centre on the Isle
+of Man. Built with Next.js (App Router), React, TypeScript and Tailwind CSS.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 16** (App Router, Server Components by default)
+- **TypeScript** (strict)
+- **Tailwind CSS v4** with design tokens for the black/gold brand palette
+- **shadcn-style UI primitives** (Radix UI + class-variance-authority)
+- **Lucide React** icons
+- **Motion** (Framer Motion successor) for scroll reveals, respecting
+  `prefers-reduced-motion`
+- **React Hook Form + Zod** for client and server-side form validation
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The site runs fully
+locally without any AWS infrastructure — booking and contact-form backends
+run in a clearly labelled **demo mode** until configured (see below).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                 Routes (App Router), API routes, sitemap/robots
+  components/
+    layout/            Header, mobile nav, announcement bar, footer
+    home/               Homepage sections
+    programmes/         Programme card + detail content
+    camps/              Camp card
+    booking/            Multi-step booking form + stepper
+    forms/              Contact form
+    ui/                 Shared primitives (button, badge, accordion, etc.)
+    seo/                JSON-LD structured data
+  lib/
+    data/               Seed content: programmes, camps, coaches, FAQs
+    validation/         Zod schemas (contact, booking)
+    api/                Server-side submission logic (booking, contact)
+    utils.ts            Formatting helpers
+  types/                Shared TypeScript types
+  config/               Site-wide config (nav, sponsor, feature flags)
+```
 
-## Learn More
+Content (programmes, camps, coaches, sponsor, FAQs) is kept in typed data
+files under `src/lib/data/`, separate from presentation — swap these for API
+calls to a real backend without touching components.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to `.env.local` and fill in real values as backends are
+connected. The site works locally with none of these set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Purpose |
+| --- | --- |
+| `BOOKING_API_URL` / `BOOKING_API_KEY` | Secure AWS-hosted booking API (API Gateway + Lambda, DynamoDB/PostgreSQL). Unset = demo mode. |
+| `NEXT_PUBLIC_BOOKING_API_URL` | Mirrors booking backend status to the client UI. |
+| `CONTACT_FORM_PROVIDER` + credentials | Email delivery provider for the contact form. Unset = form clearly tells users to email/call directly instead of faking success. |
+| `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | Reserved for future AWS-backed services (file storage, etc). |
 
-## Deploy on Vercel
+**Never commit `.env.local` or real secrets.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## What's demo-only vs production-ready
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Production-ready now:** all routes/pages, navigation, responsive layout,
+  content data model, SEO metadata/sitemap/robots, accessibility structure,
+  client + server-side form validation, rate limiting on API routes.
+- **Demo-only until backend is connected:**
+  - **Booking flow** (`/book/[campId]`): fully built UI and server route,
+    but with no `BOOKING_API_URL` configured it returns a clearly labelled
+    demo reference and never claims a real reservation was made. No payment
+    provider is integrated.
+  - **Contact form**: validates and rate-limits submissions server-side, but
+    without `CONTACT_FORM_PROVIDER` configured it tells the user the form is
+    unavailable and shows direct email/phone alternatives rather than a false
+    success message.
+- **Pending content verification:** programme pricing/session times, camp
+  capacity numbers, and the legal pages (`/privacy`, `/terms`,
+  `/safeguarding`) are structural drafts flagged for review — they are not
+  yet approved for production.
+
+## Build & verification commands
+
+```bash
+npm run lint        # ESLint
+npx tsc --noEmit    # Type-check
+npm run build        # Production build
+npm start            # Serve the production build locally
+```
+
+## Deployment
+
+- **Frontend:** deploy to Vercel (`vercel.com/new`), connecting this
+  repository. Set the environment variables above in the Vercel project
+  settings for any backends you've connected.
+- **Backend (future):** booking and storage are designed to be backed by
+  AWS (API Gateway + Lambda, DynamoDB/PostgreSQL, S3). None of this is
+  required to preview or deploy the frontend.
+
+## Brand assets
+
+Logo and photography are sourced from the existing
+[letsplay.co.im](https://letsplay.co.im) site with permission implied by
+continuity of the brand refresh. Replace `public/images/*` with updated
+assets as they become available — components fall back to an on-brand
+placeholder (`PlaceholderImage`) when an image is missing.
