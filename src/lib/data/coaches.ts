@@ -45,4 +45,10 @@ export const coaches: Coach[] = [
     role: "Coach",
     image: "/images/coach-andyrew-gosnell.jpg",
   },
+  {
+    slug: "gav-gawne",
+    name: "Gav Gawne",
+    role: "Coach",
+    image: "/images/coach-gav-gawne.jpg",
+  },
 ];
