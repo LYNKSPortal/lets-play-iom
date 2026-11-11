@@ -69,6 +69,15 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  /*
+   * @mux/mux-video renders its internal <video> inside a shadow root with
+   * `object-fit: var(--media-object-fit, contain)` — the default "contain"
+   * letterboxes the video (black bars) whenever the frame's aspect ratio
+   * doesn't match the source. Overriding this custom property is what
+   * actually controls the internal video's sizing; plain `object-fit` on
+   * the host element above has no effect on it.
+   */
+  --media-object-fit: cover;
 }
 
 @media (max-width: 639px) {
