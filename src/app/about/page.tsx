@@ -6,13 +6,15 @@ import { PageHero } from "@/components/ui/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About Us",
   description:
     "Let's Play is the Isle of Man's leading football development centre for boys and girls, with over 150 children taking part in our weekly programmes.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const stats = [
   { value: "150+", label: "Children taking part in our weekly programmes" },
@@ -58,6 +60,12 @@ const sections = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "About Us", path: "/about" },
+        ]}
+      />
       <PageHero
         eyebrow="About Let's Play"
         title="Football with purpose."

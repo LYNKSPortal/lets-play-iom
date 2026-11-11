@@ -8,15 +8,18 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { upcomingCamps, pastCamps } from "@/lib/data/camps";
+import { campFaqs } from "@/lib/data/faqs";
 import { siteConfig } from "@/config/site";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Football Camps",
   description:
     "Let's Play is the Isle of Man's leading football development centre for boys and girls, running football camps packed with skills, games, teamwork and fun every school holiday.",
-  alternates: { canonical: "/football-camps" },
-};
+  path: "/football-camps",
+});
 
 const aboutPoints = [
   {
@@ -39,6 +42,13 @@ export default function FootballCampsPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Football Camps", path: "/football-camps" },
+        ]}
+      />
+      <FaqJsonLd faqs={campFaqs} />
       <PageHero
         eyebrow="Football Camps"
         title="School holidays. Sorted."

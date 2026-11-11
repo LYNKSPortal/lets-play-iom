@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/ui/legal-page";
 import { siteConfig } from "@/config/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
-  robots: { index: false, follow: true },
-  alternates: { canonical: "/privacy" },
-};
+  description:
+    "How Let's Play collects, uses and protects personal information for enquiries, registrations and camp bookings on the Isle of Man.",
+  path: "/privacy",
+  noIndex: true,
+});
 
 export default function PrivacyPage() {
   return (

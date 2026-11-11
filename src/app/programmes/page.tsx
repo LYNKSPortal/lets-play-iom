@@ -3,17 +3,25 @@ import { PageHero } from "@/components/ui/page-hero";
 import { ProgrammeCard } from "@/components/programmes/programme-card";
 import { Reveal } from "@/components/ui/reveal";
 import { programmes } from "@/lib/data/programmes";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Our Football Programmes",
   description:
     "Structured after-school football programmes for boys and girls on the Isle of Man, open-access Football and Full Throttle Programmes, plus our invite-only Gold Programmes.",
-  alternates: { canonical: "/programmes" },
-};
+  path: "/programmes",
+});
 
 export default function ProgrammesPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Programmes", path: "/programmes" },
+        ]}
+      />
       <PageHero
         eyebrow="Our Football Programmes"
         title="Our Football Programmes."

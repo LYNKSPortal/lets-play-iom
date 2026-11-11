@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/ui/legal-page";
 import { siteConfig } from "@/config/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms & Conditions",
-  robots: { index: false, follow: true },
-  alternates: { canonical: "/terms" },
-};
+  description:
+    "Terms and conditions for Let's Play football programmes, camps, registrations and standing order payments on the Isle of Man.",
+  path: "/terms",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

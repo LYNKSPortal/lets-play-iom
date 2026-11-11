@@ -11,6 +11,8 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { getProgramme, programmes } from "@/lib/data/programmes";
 import { programmeFaqs } from "@/lib/data/faqs";
 import { siteConfig } from "@/config/site";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return programmes.map((p) => ({ slug: p.slug }));
@@ -24,11 +26,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const programme = getProgramme(slug);
   if (!programme) return {};
-  return {
+  return buildMetadata({
     title: programme.name,
     description: programme.description,
-    alternates: { canonical: `/programmes/${programme.slug}` },
-  };
+    path: `/programmes/${programme.slug}`,
+  });
 }
 
 export default async function ProgrammeDetailPage({
@@ -44,6 +46,14 @@ export default async function ProgrammeDetailPage({
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Programmes", path: "/programmes" },
+          { label: programme.name, path: `/programmes/${programme.slug}` },
+        ]}
+      />
+      <FaqJsonLd faqs={faqs} />
       <PageHero eyebrow={programme.category} title={programme.name}>
         <div className="mt-6">
           <Breadcrumbs

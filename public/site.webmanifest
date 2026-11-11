@@ -1,0 +1,17 @@
+{
+  "name": "Let's Play Football Development Centre",
+  "short_name": "Let's Play",
+  "description": "Isle of Man football development centre for boys and girls, after-school programmes and school-holiday football camps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#c19a5b",
+  "icons": [
+    {
+      "src": "/images/lets-play-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

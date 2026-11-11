@@ -11,6 +11,8 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { camps, getCamp, isPastCamp } from "@/lib/data/camps";
 import { campFaqs } from "@/lib/data/faqs";
 import { formatPrice, formatSessionDate } from "@/lib/utils";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return camps.map((c) => ({ slug: c.slug }));
@@ -24,11 +26,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const camp = getCamp(slug);
   if (!camp) return {};
-  return {
+  return buildMetadata({
     title: camp.name,
     description: camp.description,
-    alternates: { canonical: `/football-camps/${camp.slug}` },
-  };
+    path: `/football-camps/${camp.slug}`,
+  });
 }
 
 export default async function CampDetailPage({
@@ -45,6 +47,14 @@ export default async function CampDetailPage({
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Football Camps", path: "/football-camps" },
+          { label: camp.name, path: `/football-camps/${camp.slug}` },
+        ]}
+      />
+      <FaqJsonLd faqs={campFaqs} />
       <PageHero eyebrow="Football Camp" title={camp.name}>
         <div className="mt-6">
           <Breadcrumbs

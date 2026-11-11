@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage } from "@/components/ui/legal-page";
 import { siteConfig } from "@/config/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Safeguarding",
-  robots: { index: false, follow: true },
-  alternates: { canonical: "/safeguarding" },
-};
+  description:
+    "Let's Play's safeguarding commitment: coach vetting, DBS checks, safeguarding training, and how to report a concern.",
+  path: "/safeguarding",
+  noIndex: true,
+});
 
 export default function SafeguardingPage() {
   return (

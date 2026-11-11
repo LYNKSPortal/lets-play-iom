@@ -5,13 +5,15 @@ import { PageHero } from "@/components/ui/page-hero";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Skeleton } from "@/components/ui/skeleton";
 import { siteConfig } from "@/config/site";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact Us",
   description:
     "Get in touch with Let's Play, football programmes and camps on the Isle of Man. Email, call, or send us a message.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const contactDetails = [
   {
@@ -37,6 +39,12 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Contact", path: "/contact" },
+        ]}
+      />
       <PageHero
         eyebrow="Contact"
         title="Let's talk football."

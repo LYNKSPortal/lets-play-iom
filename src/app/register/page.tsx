@@ -6,17 +6,25 @@ import { StatusBadge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { programmes } from "@/lib/data/programmes";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Register",
   description:
     "Register your child for a Let's Play football programme on the Isle of Man.",
-  alternates: { canonical: "/register" },
-};
+  path: "/register",
+});
 
 export default function RegisterLandingPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Register", path: "/register" },
+        ]}
+      />
       <PageHero
         eyebrow="Register"
         title="Choose a programme."

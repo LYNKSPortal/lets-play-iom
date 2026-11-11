@@ -5,13 +5,15 @@ import { CoachCard } from "@/components/ui/coach-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { coaches } from "@/lib/data/coaches";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Our Coaches",
   description:
     "Meet the Let's Play coaching team on the Isle of Man, experienced coaches focused on safe, positive youth football development.",
-  alternates: { canonical: "/coaches" },
-};
+  path: "/coaches",
+});
 
 const safeguardingPoints = [
   "Lead coaches hold UEFA B and C coaching licences.",
@@ -23,6 +25,12 @@ const safeguardingPoints = [
 export default function CoachesPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Our Coaches", path: "/coaches" },
+        ]}
+      />
       <PageHero
         eyebrow="Our Coaches"
         title="Great coaches. Great experiences."
