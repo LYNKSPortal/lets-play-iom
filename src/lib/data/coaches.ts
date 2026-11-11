@@ -6,7 +6,6 @@ export const coaches: Coach[] = [
     slug: "james-mcstay",
     name: "James Mcstay",
     role: "Owner & Coach",
-    bio: "As the owner of Let's Play, I'm dedicated to making our football development centre the best it can be. Our goal is to provide every child with the opportunity to grow as a footballer and create positive memories along the way.",
     image: "/images/coach-james-mcstay-02.jpg",
   },
   {
