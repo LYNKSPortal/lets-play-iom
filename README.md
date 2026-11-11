@@ -92,10 +92,8 @@ connected. The site works locally with none of these set:
     without `CONTACT_FORM_PROVIDER` configured it tells the user the form is
     unavailable and shows direct email/phone alternatives rather than a false
     success message.
-- **Pending content verification:** programme pricing/session times, camp
-  capacity numbers, and the legal pages (`/privacy`, `/terms`,
-  `/safeguarding`) are structural drafts flagged for review — they are not
-  yet approved for production.
+- **Legal pages** (`/privacy`, `/terms`, `/safeguarding`) and programme
+  pricing/payment terms reflect content reviewed and approved by Let's Play.
 
 ## Build & verification commands
 

@@ -92,13 +92,6 @@ export default function CoachesPage() {
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted">
-              These statements reflect Let&apos;s Play&apos;s organisational
-              policy as published on letsplay.co.im and are subject to
-              confirmation before launch. Individual coach qualifications and
-              certifications are not listed here unless independently
-              verified.
-            </p>
           </Reveal>
         </div>
       </section>

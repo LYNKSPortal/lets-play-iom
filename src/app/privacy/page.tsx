@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Privacy Policy" updated="Draft, pending review">
+    <LegalPage eyebrow="Legal" title="Privacy Policy" updated="November 2026">
       <section>
         <h2>Who we are</h2>
         <p>
@@ -54,10 +54,9 @@ export default function PrivacyPage() {
       <section>
         <h2>Data retention and deletion</h2>
         <p>
-          We intend to retain booking information only for as long as
-          necessary to deliver our services and meet legal obligations, and
-          to delete it securely afterwards. Specific retention periods will
-          be confirmed here before launch.
+          We retain booking information only for as long as necessary to
+          deliver our services and meet our legal obligations, and delete it
+          securely afterwards.
         </p>
       </section>
 
@@ -65,8 +64,9 @@ export default function PrivacyPage() {
         <h2>Third parties</h2>
         <p>
           We do not sell personal information. Where we use third-party
-          services (for example, to process bookings or send emails), those
-          providers will be listed here once finalised.
+          services, for example to process bookings or send emails, those
+          providers only access the information needed to deliver that
+          service.
         </p>
       </section>
 

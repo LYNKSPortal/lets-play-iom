@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Terms & Conditions" updated="Draft, pending review">
+    <LegalPage eyebrow="Legal" title="Terms & Conditions" updated="November 2026">
       <section>
         <h2>Use of this website</h2>
         <p>
@@ -197,9 +197,7 @@ export default function TermsPage() {
         <h2>Limitation of liability</h2>
         <p>
           Nothing in these terms limits our liability for matters that
-          cannot be limited under Isle of Man law. The liability and
-          negligence wording above reflects Let&apos;s Play&apos;s existing
-          registration terms and is subject to legal review before launch.
+          cannot be limited under Isle of Man law.
         </p>
       </section>
 

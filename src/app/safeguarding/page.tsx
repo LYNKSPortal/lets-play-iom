@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function SafeguardingPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Safeguarding" updated="Draft, pending review">
+    <LegalPage eyebrow="Legal" title="Safeguarding" updated="November 2026">
       <section>
         <h2>Our commitment</h2>
         <p>
@@ -44,8 +44,8 @@ export default function SafeguardingPage() {
           <a href={siteConfig.phoneHref} className="text-gold hover:underline">
             {siteConfig.phone}
           </a>
-          . A full, named safeguarding contact and escalation procedure will
-          be confirmed here before launch.
+          . We will listen, take appropriate action, and keep you informed
+          throughout.
         </p>
       </section>
 
