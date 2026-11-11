@@ -1,12 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MuxBackgroundVideo } from "@mux/mux-background-video/react";
+import MuxVideo from "@mux/mux-video/react";
 
 const MUX_PLAYBACK_ID = "txw5vgbcCQIsVbOydQyuderPAFCC01yszgYjSDRdSzB8";
 
 /**
  * Full-bleed Mux-hosted background video for the homepage hero.
+ *
+ * Uses `@mux/mux-video`, which plays HLS natively on Safari/iOS and via
+ * hls.js elsewhere — this is Mux's mature, broadly-compatible player
+ * element (as opposed to the newer `@mux/mux-background-video`, which
+ * relies on MediaSource/ManagedMediaSource and has inconsistent mobile
+ * support).
+ *
  * Falls back to a static poster frame when the visitor has requested
  * reduced motion, so no autoplaying video is forced on them.
  */
@@ -38,12 +45,19 @@ export function HeroVideo() {
   }
 
   return (
-    <MuxBackgroundVideo
-      src={`https://stream.mux.com/${MUX_PLAYBACK_ID}.m3u8`}
-      className="hero-video-frame absolute inset-0 h-full w-full overflow-hidden"
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={poster} alt="" className="h-full w-full object-cover" />
-    </MuxBackgroundVideo>
+    <MuxVideo
+      playbackId={MUX_PLAYBACK_ID}
+      streamType="on-demand"
+      poster={poster}
+      muted
+      autoplay
+      loop
+      playsInline
+      preload="auto"
+      disableTracking
+      disablePictureInPicture
+      disableRemotePlayback
+      className="hero-video-frame absolute inset-0 h-full w-full object-cover"
+    />
   );
 }

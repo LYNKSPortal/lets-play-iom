@@ -62,16 +62,15 @@ body {
  * screen edge-to-edge using the video's long axis instead of cropping
  * heavily from a straight landscape cover.
  */
-.hero-video-frame video,
-.hero-video-frame img {
+.hero-video-frame {
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
 @media (max-width: 639px) {
-  .hero-video-frame video,
-  .hero-video-frame img {
+  .hero-video-frame {
     position: absolute;
     top: 50%;
     left: 50%;
