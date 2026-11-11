@@ -46,14 +46,15 @@ export function Welcome() {
           </ul>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="bg-pitch relative overflow-hidden rounded-xl border border-border-subtle">
+          <div className="relative overflow-hidden rounded-xl border border-border-subtle">
             <Image
-              src="/images/easter-camp.png"
-              alt="Let's Play gold football mark"
-              width={900}
-              height={684}
-              className="mx-auto h-auto w-full max-w-md p-14 opacity-90 md:p-20"
+              src="/More-than-just-football.jpg"
+              alt="Young footballers with Let's Play at a community football event on the Isle of Man"
+              width={1000}
+              height={777}
+              className="h-auto w-full object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0" />
             <div className="absolute bottom-5 left-5 right-5 rounded-lg border border-gold/30 bg-black/70 px-5 py-4 backdrop-blur-sm sm:left-auto sm:right-5 sm:w-56">
               <p className="font-display text-4xl font-bold text-gold">150+</p>
               <p className="mt-1 text-xs uppercase tracking-widest text-white/80">
