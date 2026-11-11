@@ -37,7 +37,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-24">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-28">
         <Link
           href="/"
           className="relative flex shrink-0 items-center gap-3"
@@ -46,9 +46,9 @@ export function SiteHeader() {
           <Image
             src={siteConfig.logo}
             alt="Let's Play Football Development Centre"
-            width={44}
-            height={38}
-            className="h-14 w-auto object-contain sm:h-14 md:h-16"
+            width={120}
+            height={103}
+            className="h-auto w-20 object-contain md:w-[120px]"
             priority
           />
         </Link>
