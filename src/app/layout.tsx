@@ -51,10 +51,10 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/images/lets-play-logo.png",
-        width: 1200,
-        height: 1027,
-        alt: "Let's Play Football Development Centre logo",
+        url: "/meta-og-image.jpg",
+        width: 1000,
+        height: 1000,
+        alt: "Let's Play Football Development Centre",
       },
     ],
   },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Let's Play | Football Development Centre, Isle of Man",
     description: siteConfig.description,
-    images: ["/images/lets-play-logo.png"],
+    images: ["/meta-og-image.jpg"],
   },
   manifest: "/fav/site.webmanifest",
   icons: {

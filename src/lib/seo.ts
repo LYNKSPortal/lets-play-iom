@@ -12,7 +12,9 @@ export function buildMetadata({
   title,
   description,
   path,
-  image = "/images/lets-play-logo.png",
+  image = "/meta-og-image.jpg",
+  imageWidth = 1000,
+  imageHeight = 1000,
   imageAlt = "Let's Play Football Development Centre",
   noIndex = false,
 }: {
@@ -20,6 +22,8 @@ export function buildMetadata({
   description: string;
   path: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   imageAlt?: string;
   noIndex?: boolean;
 }): Metadata {
@@ -49,7 +53,7 @@ export function buildMetadata({
       siteName: "Let's Play Football Development Centre",
       type: "website",
       locale: "en_GB",
-      images: [{ url: image, width: 1200, height: 1027, alt: imageAlt }],
+      images: [{ url: image, width: imageWidth, height: imageHeight, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
