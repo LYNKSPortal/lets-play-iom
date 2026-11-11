@@ -37,7 +37,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-20">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 md:h-24">
         <Link
           href="/"
           className="relative flex shrink-0 items-center gap-3"
@@ -48,7 +48,7 @@ export function SiteHeader() {
             alt="Let's Play Football Development Centre"
             width={44}
             height={38}
-            className="h-10 w-auto object-contain md:h-12"
+            className="h-14 w-auto object-contain sm:h-14 md:h-16"
             priority
           />
         </Link>

@@ -35,7 +35,7 @@ export function MobileNavigation({
               alt="Let's Play"
               width={40}
               height={34}
-              className="h-9 w-auto"
+              className="h-12 w-auto"
             />
             <DialogPrimitive.Close className="flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-card">
               <X className="size-6" />
