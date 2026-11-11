@@ -123,8 +123,16 @@ export default function AboutPage() {
         </section>
       ))}
 
-      <section className="px-5 py-20 sm:px-8 md:py-28">
-        <div className="mx-auto max-w-4xl">
+      <section className="relative overflow-hidden px-5 py-20 sm:px-8 md:py-28">
+        <Image
+          src="/More-than-football.jpg"
+          alt="Let's Play players presenting a cheque in support of Rebecca House, the Isle of Man's children's hospice"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="relative mx-auto max-w-4xl">
           <Reveal>
             <HeartHandshake
               aria-hidden
