@@ -11,6 +11,7 @@ export const siteConfig = {
   phoneHref: "tel:+447624222766",
   location: "Isle of Man",
   logo: "/images/lets-play-logo.png",
+  facebookUrl: "https://www.facebook.com/LetsPlayIOM",
 } as const;
 
 export const mainNav: NavItem[] = [

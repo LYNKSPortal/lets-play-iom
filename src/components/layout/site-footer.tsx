@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { mainNav, siteConfig } from "@/config/site";
 import { CurrentYear } from "@/components/layout/current-year";
+import { FacebookIcon } from "@/components/ui/icons";
 
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -26,6 +27,15 @@ export function SiteFooter() {
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
               Supporting the next generation of footballers on the Isle of Man.
             </p>
+            <a
+              href={siteConfig.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Let's Play on Facebook"
+              className="mt-5 inline-flex size-9 items-center justify-center rounded-md border border-border-subtle text-muted transition-colors hover:border-gold hover:text-gold"
+            >
+              <FacebookIcon aria-hidden className="size-4" />
+            </a>
           </div>
 
           <nav aria-label="Footer" className="md:col-span-3">

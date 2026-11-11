@@ -3,10 +3,12 @@ import { HeartHandshake } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { CampCard } from "@/components/camps/camp-card";
 import { EmptyState } from "@/components/ui/empty-state";
+import { FacebookIcon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { upcomingCamps, pastCamps } from "@/lib/data/camps";
+import { siteConfig } from "@/config/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -81,11 +83,23 @@ export default function FootballCampsPage() {
           ) : (
             <EmptyState
               title="No upcoming camps right now"
-              description="New camp dates are announced ahead of each school holiday. Get in touch to be notified when bookings open."
+              description="For the latest camps, check out our Facebook page for updates, or get in touch through our form."
               action={
-                <Button asChild>
-                  <Link href="/contact?enquiry=Football%20Camps">Contact Us</Link>
-                </Button>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button asChild>
+                    <a
+                      href={siteConfig.facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FacebookIcon aria-hidden className="size-4" />
+                      Follow on Facebook
+                    </a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <Link href="/contact?enquiry=Football%20Camps">Contact Us</Link>
+                  </Button>
+                </div>
               }
             />
           )}
