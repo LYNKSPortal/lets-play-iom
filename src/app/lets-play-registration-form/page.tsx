@@ -4,7 +4,7 @@ import { RegistrationFormLong } from "@/components/registration/registration-for
 import { getProgramme } from "@/lib/data/programmes";
 
 /**
- * Let's Play Football Camp Signup Form.
+ * Let's Play Registration Form.
  *
  * A single, standalone, unlisted link. Not linked from any site navigation,
  * the sitemap, or search results (robots.txt disallows this path and this
@@ -14,20 +14,17 @@ import { getProgramme } from "@/lib/data/programmes";
  * programme's public availability status.
  */
 export const metadata: Metadata = {
-  title: "Let's Play Football Camp Signup Form",
+  title: "Let's Play Registration Form",
   robots: { index: false, follow: false },
 };
 
-export default function SignupPage() {
+export default function RegistrationFormPage() {
   const programme = getProgramme("football");
   if (!programme) return null;
 
   return (
     <div className="min-h-screen bg-black">
-      <PageHero
-        eyebrow="Let's Play"
-        title="Let's Play Football Camp Signup Form"
-      />
+      <PageHero eyebrow="Let's Play" title="Let's Play Registration Form" />
       <section className="px-5 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-2xl">
           <RegistrationFormLong programme={programme} source="direct" />
