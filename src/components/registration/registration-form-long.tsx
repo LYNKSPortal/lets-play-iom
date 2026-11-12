@@ -66,7 +66,7 @@ export function RegistrationFormLong({
       },
       consent: {
         termsAccepted: false as unknown as true,
-        paymentAgreementAccepted: false as unknown as true,
+        paymentAgreementAccepted: true,
       },
     },
   });
@@ -174,24 +174,6 @@ export function RegistrationFormLong({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
         <input type="hidden" {...register("programmeSlug")} />
         <input type="hidden" {...register("source")} />
-
-        {/* Programme */}
-        <section className="rounded-xl border border-border-subtle bg-card p-6">
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-white">
-            {programme.name}
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-white/80">
-            {programme.description}
-          </p>
-          {programme.price && (
-            <div className="mt-5 flex items-center justify-between rounded-lg border border-border-subtle bg-surface px-4 py-3">
-              <span className="text-sm text-muted">Price</span>
-              <span className="font-display text-xl font-bold text-gold">
-                {programme.price}
-              </span>
-            </div>
-          )}
-        </section>
 
         {/* Parent / Guardian */}
         <section className="space-y-5 rounded-xl border border-border-subtle bg-card p-6">
@@ -499,159 +481,6 @@ export function RegistrationFormLong({
               </Label>
             </div>
             <FieldError id="consent-terms-error" message={errors.consent?.termsAccepted?.message} />
-          </div>
-        </section>
-
-        {/* Standing Order Payment Details/Agreement */}
-        <section className="space-y-6 rounded-xl border border-border-subtle bg-card p-6">
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-white">
-            Standing Order Payment Details/Agreement
-          </h2>
-
-          <div className="space-y-4 rounded-lg border border-border-subtle bg-surface p-4 text-sm leading-relaxed text-muted">
-            <div>
-              <p className="font-semibold text-white">1. Agreement Overview</p>
-              <p className="mt-1">
-                This agreement outlines the terms and conditions under
-                which the Parent/Guardian agrees to make regular standing
-                order payments to Let&apos;s Play for the participation of
-                their child in the club&apos;s activities.
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-white">2. Payment Details</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5">
-                <li>Amount: {programme.price ?? "see our Terms & Conditions"}</li>
-                <li>Frequency: Monthly.</li>
-                <li>Payment date: 1st of each month.</li>
-                <li>
-                  Payment duration: payments will commence on the 1st of
-                  each month and continue until further notice.
-                </li>
-                <li>
-                  Term time only: payments cover programmes operating
-                  during school term time only. No programmes take place
-                  in August, and standing orders can be paused for August
-                  directly with your bank if you wish.
-                </li>
-                <li>
-                  Mid-month joining: if the child joins the club in the
-                  middle of a month, a one-off payment will be required to
-                  cover the remainder of that month. The regular monthly
-                  fee will then be due on the 1st of the following month
-                  (this can be discussed and agreed with the Owner).
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-white">3. Bank Details for Standing Order</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5">
-                <li>Account name: {standingOrderDetails.accountName}</li>
-                <li>Bank name: {standingOrderDetails.bankName}</li>
-                <li>Sort code: {standingOrderDetails.sortCode}</li>
-                <li>Account number: {standingOrderDetails.accountNumber}</li>
-                <li>
-                  Reference: please use {standingOrderDetails.referenceNote} when
-                  setting up the standing order.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-white">4. Obligations of the Parent/Guardian</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5">
-                <li>
-                  The Parent/Guardian agrees to set up a standing order
-                  with their bank to ensure timely monthly payments once
-                  signed up.
-                </li>
-                <li>
-                  If joining mid-month, the Parent/Guardian agrees to make
-                  a one-off payment to cover the remainder of the month.
-                </li>
-                <li>
-                  The Parent/Guardian agrees to ensure that sufficient
-                  funds are available in the account on the payment dates.
-                </li>
-                <li>
-                  The Parent/Guardian understands that failure to make
-                  payments on time may result in a £5.00 late payment fee.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-white">5. Obligations of the Football Club</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5">
-                <li>
-                  The Club will provide the agreed services to the child,
-                  including training sessions, matches, and other
-                  activities as per the club&apos;s schedule.
-                </li>
-                <li>
-                  The Club agrees to provide at least 30 days&apos; notice
-                  in writing if any changes are to be made to the payment
-                  amount, frequency, or bank details.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-white">6. Cancellation and Termination</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5">
-                <li>
-                  The Parent/Guardian may cancel the standing order at any
-                  time by providing 30 days&apos; written notice to
-                  Let&apos;s Play Limited. Cancellation of the standing
-                  order will result in the termination of the child&apos;s
-                  membership.
-                </li>
-                <li>
-                  Let&apos;s Play Limited reserves the right to terminate
-                  this agreement and the child&apos;s membership if
-                  payments are not made in accordance with the terms
-                  outlined above.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-white">7. Governing Law</p>
-              <p className="mt-1">
-                This agreement is governed by and construed in accordance
-                with the laws of the Isle of Man.
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-white">8. Agreement</p>
-              <p className="mt-1">
-                By agreement to this document, both parties acknowledge
-                that they have read, understood, and agree to the terms
-                and conditions outlined above.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <div className="flex items-start gap-3">
-              <Controller
-                control={control}
-                name="consent.paymentAgreementAccepted"
-                render={({ field }) => (
-                  <Checkbox
-                    id="consent.paymentAgreementAccepted"
-                    checked={field.value === true}
-                    onCheckedChange={(checked) => field.onChange(checked === true)}
-                  />
-                )}
-              />
-              <Label
-                htmlFor="consent.paymentAgreementAccepted"
-                className="font-normal leading-relaxed"
-              >
-                I &quot;Agree&quot; to the above. *
-              </Label>
-            </div>
-            <FieldError
-              id="consent-payment-error"
-              message={errors.consent?.paymentAgreementAccepted?.message}
-            />
           </div>
         </section>
 
