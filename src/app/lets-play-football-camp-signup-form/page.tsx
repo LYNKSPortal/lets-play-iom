@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/page-hero";
-import { RegistrationForm } from "@/components/registration/registration-form";
+import { RegistrationFormLong } from "@/components/registration/registration-form-long";
 import { getProgramme } from "@/lib/data/programmes";
 
 /**
@@ -30,7 +30,7 @@ export default function SignupPage() {
       />
       <section className="px-5 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-2xl">
-          <RegistrationForm programme={programme} source="direct" />
+          <RegistrationFormLong programme={programme} source="direct" />
         </div>
       </section>
     </div>
