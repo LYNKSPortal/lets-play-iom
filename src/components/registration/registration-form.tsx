@@ -420,8 +420,8 @@ export function RegistrationForm({
                 <p className="font-semibold text-white">Assumption of Risk</p>
                 <p className="mt-1">
                   I voluntarily agree to allow my child to participate in all
-                  football activities organized by Let&apos;s Play. I accept
-                  and assume all risks, known and unknown, related to such
+                  football activities organized by Let&apos;s Play Limited
+                  (Isle of Man). I accept and assume all risks, known and unknown, related to such
                   participation, including those arising from the negligence
                   of the club, its staff, and other participants.
                 </p>
@@ -432,8 +432,8 @@ export function RegistrationForm({
                   In consideration of my child&apos;s participation in
                   football activities, I, on behalf of myself, my child, and
                   our heirs, assigns, personal representatives, and next of
-                  kin, hereby release, waive, and discharge Let&apos;s Play,
-                  its directors, officers, employees, volunteers, and agents
+                  kin, hereby release, waive, and discharge Let&apos;s Play
+                  Limited (Isle of Man), its directors, officers, employees, volunteers, and agents
                   (collectively, &quot;the Released Parties&quot;) from any
                   and all liability, claims, demands, actions, or causes of
                   action, arising out of or related to any injury, illness,
@@ -481,8 +481,8 @@ export function RegistrationForm({
                 </p>
                 <p className="mt-1">
                   As a parent or legal guardian, I hereby grant permission to
-                  Let&apos;s Play to photograph and/or record my child during
-                  football-related activities and events. I understand that
+                  Let&apos;s Play Limited (Isle of Man) to photograph and/or
+                  record my child during football-related activities and events. I understand that
                   these images or videos may be used for promotional
                   purposes, including but not limited to social media,
                   websites, newsletters, and other marketing materials. I
@@ -490,7 +490,7 @@ export function RegistrationForm({
                   and appropriate manner, and I waive any rights to
                   compensation or ownership of the images. If at any time I
                   wish to revoke this consent, I will notify Let&apos;s Play
-                  in writing.
+                  Limited (Isle of Man) in writing.
                 </p>
               </div>
               <div>
@@ -498,7 +498,7 @@ export function RegistrationForm({
                   WhatsApp as our Primary Communication
                 </p>
                 <p className="mt-1">
-                  At Let&apos;s Play, we use WhatsApp as our primary
+                  At Let&apos;s Play Limited (Isle of Man), we use WhatsApp as our primary
                   communication platform for sharing information about
                   football events, programs, and updates. This allows us to
                   quickly and efficiently keep everyone informed and

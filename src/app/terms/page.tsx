@@ -125,24 +125,26 @@ export default function TermsPage() {
           activities involves inherent risks, including but not limited to
           physical injury, illness, or death. These risks may result from
           the actions, inactions, or negligence of a child, other
-          participants, Let&apos;s Play, its staff, volunteers, or others
-          involved in the activities.
+          participants, Let&apos;s Play Limited (Isle of Man), its staff,
+          volunteers, or others involved in the activities.
         </p>
         <p>
           <strong>Assumption of risk.</strong> By registering a child for
-          Let&apos;s Play activities, a parent or guardian voluntarily
-          agrees to allow their child to participate, and accepts and
-          assumes all risks, known and unknown, related to that
-          participation, including risks arising from the negligence of
-          Let&apos;s Play, its staff, or other participants.
+          Let&apos;s Play Limited (Isle of Man) activities, a parent or
+          guardian voluntarily agrees to allow their child to participate,
+          and accepts and assumes all risks, known and unknown, related to
+          that participation, including risks arising from the negligence of
+          Let&apos;s Play Limited (Isle of Man), its staff, or other
+          participants.
         </p>
         <p>
           <strong>Release of liability.</strong> In consideration of a
           child&apos;s participation, the parent or guardian, on behalf of
           themselves, their child, and their heirs, assigns, personal
           representatives and next of kin, releases, waives, and discharges
-          Let&apos;s Play, its directors, officers, employees, volunteers
-          and agents (the &quot;Released Parties&quot;) from any and all
+          Let&apos;s Play Limited (Isle of Man), its directors, officers,
+          employees, volunteers and agents (the &quot;Released
+          Parties&quot;) from any and all
           liability, claims, demands, actions, or causes of action arising
           out of or related to any injury, illness, damage, or loss
           occurring as a result of participation, whether caused by the
@@ -159,10 +161,10 @@ export default function TermsPage() {
         </p>
         <p>
           <strong>Medical treatment.</strong> In the event of an injury or
-          illness, parents and guardians authorise Let&apos;s Play and its
-          representatives to seek and obtain medical treatment for their
-          child, and understand they are responsible for any costs
-          associated with that treatment.
+          illness, parents and guardians authorise Let&apos;s Play Limited
+          (Isle of Man) and its representatives to seek and obtain medical
+          treatment for their child, and understand they are responsible for
+          any costs associated with that treatment.
         </p>
         <p>
           <strong>Governing law.</strong> This section is governed by and
@@ -173,23 +175,24 @@ export default function TermsPage() {
       <section>
         <h2>Consent for photography and videography</h2>
         <p>
-          Registering a child for Let&apos;s Play activities may include
-          granting permission for Let&apos;s Play to photograph and/or
-          record the child during football-related activities and events.
-          These images or videos may be used for promotional purposes,
-          including social media, websites, newsletters, and other
-          marketing materials, used in a respectful and appropriate manner.
-          Parents and guardians waive any right to compensation or ownership
-          of these images. Consent can be withdrawn at any time by notifying
-          Let&apos;s Play in writing.
+          Registering a child for Let&apos;s Play Limited (Isle of Man)
+          activities may include granting permission for Let&apos;s Play
+          Limited (Isle of Man) to photograph and/or record the child during
+          football-related activities and events. These images or videos
+          may be used for promotional purposes, including social media,
+          websites, newsletters, and other marketing materials, used in a
+          respectful and appropriate manner. Parents and guardians waive any
+          right to compensation or ownership of these images. Consent can be
+          withdrawn at any time by notifying Let&apos;s Play Limited (Isle
+          of Man) in writing.
         </p>
       </section>
 
       <section>
         <h2>Communication</h2>
         <p>
-          Let&apos;s Play uses WhatsApp as its primary communication
-          platform for sharing information about football events,
+          Let&apos;s Play Limited (Isle of Man) uses WhatsApp as its primary
+          communication platform for sharing information about football events,
           programmes and updates. Parents and guardians are encouraged to
           join the relevant WhatsApp group to stay up to date with news and
           schedules.

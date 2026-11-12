@@ -68,8 +68,8 @@ export default function SafeguardingPage() {
       <section>
         <h2>Communication</h2>
         <p>
-          Let&apos;s Play uses WhatsApp as its primary communication
-          platform for sharing information about events, programmes and
+          Let&apos;s Play Limited (Isle of Man) uses WhatsApp as its primary
+          communication platform for sharing information about events, programmes and
           updates with parents and guardians.
         </p>
       </section>
