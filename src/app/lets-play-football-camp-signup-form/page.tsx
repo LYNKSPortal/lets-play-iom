@@ -7,7 +7,7 @@ import { getProgramme } from "@/lib/data/programmes";
  * Let's Play Football Camp Signup Form.
  *
  * A single, standalone, unlisted link. Not linked from any site navigation,
- * the sitemap, or search results (robots.txt disallows /signup and this
+ * the sitemap, or search results (robots.txt disallows this path and this
  * page sets noindex). Nothing on this page links back to the rest of the
  * website. Intended to be handed out directly before the site officially
  * goes live, or any time staff want to sign someone up regardless of a

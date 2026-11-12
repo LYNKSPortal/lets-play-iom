@@ -1,7 +1,13 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-const disallow = ["/api/", "/book/", "/register/", "/join/", "/signup"];
+const disallow = [
+  "/api/",
+  "/book/",
+  "/register/",
+  "/join/",
+  "/lets-play-football-camp-signup-form",
+];
 
 export default function robots(): MetadataRoute.Robots {
   return {

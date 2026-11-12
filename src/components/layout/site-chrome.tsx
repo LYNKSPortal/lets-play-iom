@@ -10,7 +10,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
  * link back into the rest of the site. Used for private, unlisted forms
  * that are handed out directly and must not connect to anything else.
  */
-const standaloneRoutes = ["/signup"];
+const standaloneRoutes = ["/lets-play-football-camp-signup-form"];
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
