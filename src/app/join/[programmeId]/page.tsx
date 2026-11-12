@@ -22,7 +22,9 @@ export async function generateMetadata({
   const { programmeId } = await params;
   const programme = getProgramme(programmeId);
   return {
-    title: programme ? `Join, ${programme.name}` : "Register for a Programme",
+    title: programme
+      ? `Let's Play Football Camp Signup Form, ${programme.name}`
+      : "Let's Play Football Camp Signup Form",
     robots: { index: false, follow: false },
   };
 }
@@ -39,7 +41,10 @@ export default async function JoinProgrammePage({
 
   return (
     <>
-      <PageHero eyebrow="Registration" title={`Register, ${programme.name}`} />
+      <PageHero
+        eyebrow={programme.name}
+        title="Let's Play Football Camp Signup Form"
+      />
 
       <section className="px-5 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-2xl">
