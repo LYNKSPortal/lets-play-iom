@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/json-ld";
 
 const manrope = Manrope({
@@ -110,12 +108,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <AnnouncementBar />
-        <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
