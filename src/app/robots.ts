@@ -7,6 +7,7 @@ const disallow = [
   "/register/",
   "/join/",
   "/lets-play-registration-form",
+  "/lets-play-football-camp-form",
 ];
 
 export default function robots(): MetadataRoute.Robots {
